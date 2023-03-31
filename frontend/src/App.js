@@ -1,5 +1,7 @@
 
 
+
+// App not needed anymore 
 function App() {
   return (
     <div className="App">
