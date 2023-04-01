@@ -1,56 +1,31 @@
 import styled from "styled-components";
 
-export const RightSide = styled.section`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 60%;
-`;
-
-export const SignInHeader = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 10%;
-  min-height: 40px;
-  width: 100%;
-  gap: 3%;
-  margin-top: 3%;
-`;
-
-export const TextBesidesButton = styled.p`
-  font-size: 0.8rem;
-  font-family: "Roboto", sans-serif;
-`;
-
-export const HeaderButton = styled.button`
-  background-color: white;
-  padding: 0.8rem 2.2rem;
-  border-radius: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  font-size: 0.7rem;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  letter-spacing: 1px;
-  margin-right: 4%;
-  &:hover {
-    cursor: pointer;
-  }
-`;
 
 export const AuthForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 12%;
-  height: 90%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  background-color: #F2F2F2
 `;
 
 export const FormTitle = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 400;
-  padding-bottom: 4%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10%;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background-color: #E47D31;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -59,34 +34,25 @@ export const InputContainer = styled.div`
 `;
 
 export const InputField = styled.input`
-  margin: 1rem;
-  line-height: 2rem;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  width: 40%;
-  text-indent: 3rem;
+  margin: 0.5rem;
+  line-height: 2.5rem;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  width: 30%;
+  text-indent: 1rem;
 `;
 
-export const FormIcon = styled.img`
-  width: 1.5rem;
-  height: 1.5rem;
-  position: absolute;
-  margin-top: 22px;
-  margin-left: 20px;
-`;
-
-export const SignInButton = styled.button`
-  padding: 1.2rem 6rem;
-  border-radius: 30px;
+export const LoginButton = styled.button`
+  padding: 0.9rem 4rem;
+  border-radius: 35px;
   border: none;
-  background: linear-gradient(132.96deg, #c468ff 3.32%, #6e91f6 100%);
+  background: #E47D31;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
-  margin-top: 15%;
+  margin-top: 3%;
   &:hover {
     cursor: pointer;
   }
@@ -95,5 +61,5 @@ export const SignInButton = styled.button`
 export const ErrorMessage = styled.div`
   color: red;
   font-size: 14px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 `;
