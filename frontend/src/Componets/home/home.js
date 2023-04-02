@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Homepage from "../../Pages/home/homepage";
 import LoginPage from "../../Pages/authPages/loginPage";
 import SearchPage from "../../Pages/searchPages/searchPage";
-import UserProfile from "../../Pages/userPages/userProfile";
+import UserProfile from "../../Pages/userPages/userProfile/userProfile";
 
 const Home = () => {
   return (
