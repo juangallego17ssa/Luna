@@ -1,9 +1,41 @@
-import React from 'react'
+import {React} from "react";
 
-const Homepage = () => {
-  return (
-    <h1>Awsome new Luna Page under construction by Team 3</h1>
-  )
+import {
+    HomepageDiv,
+    HomepageBannerContainerDiv,
+    HomepageBannerSearchbarButton,
+    HomepageBannerSearchbarContainerDiv,
+    HomepageBannerSearchbarInputField,
+    HomepageBody,
+    HomepageHighligherLine,
+    RestaurantCardsContainerDiv
+} from "./homepage.styled";
+
+import Navbar from "../../Componets/Layout/Header/navbar"
+
+import Footer from "../../Componets/Layout/Footer/footer"
+
+function Homepage() {
+    
+    return<HomepageDiv>
+        <Navbar/>
+        <HomepageBody>
+            <HomepageBannerContainerDiv>
+                <HomepageBannerSearchbarContainerDiv>
+                    <HomepageBannerSearchbarInputField type="text" placeholder=" Search..."/>
+                    <HomepageBannerSearchbarButton>Search</HomepageBannerSearchbarButton>
+                </HomepageBannerSearchbarContainerDiv>
+            </HomepageBannerContainerDiv>
+
+            <h4> BEST RATED RESTAURANTS</h4>
+            <HomepageHighligherLine/>
+
+            <RestaurantCardsContainerDiv>
+                {/* <RestaurantCard></RestaurantCard> */}
+            </RestaurantCardsContainerDiv>
+        </HomepageBody>
+        <Footer/>
+    </HomepageDiv>
 }
 
-export default Homepage
+export default Homepage;
