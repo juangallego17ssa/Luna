@@ -41,7 +41,7 @@ export const InputField = styled.input`
   border: 1px solid #ebebeb;
   border-radius: 3px;
   font-weight: 700;
-  width: 15%;
+  width: 20%;
   text-indent: 1rem;
 `;
 
