@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { axiosWithoutToken } from '../../Axios/axios';
+import { axiosWithoutToken } from "../../Axios/axios";
 import { setCurrentUser } from "../../Redux/Slices/currentUser";
 import { useDispatch } from "react-redux";
 import {
@@ -14,11 +14,11 @@ import {
   RightSide,
   SignInButton,
   SignInHeader,
-  TextBesidesButton, ErrorMessage
-} from './login.styled';
-// import AvatarIcon from "../../../assets/svgs/avatar.svg";
-// import PasswordIcon from "../../../assets/svgs/password.svg";
-
+  TextBesidesButton,
+  ErrorMessage,
+} from "./login.styled";
+// import AvatarIcon from "../../../Assets/svg/svgs/avatar.svg";
+// import PasswordIcon from "../../../Assets/svg/svgs/password.svg";
 
 const Login = () => {
   const [userEmail, setEmail] = useState("");
@@ -26,9 +26,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  
-  const [error, setError] = useState('');
 
+  const [error, setError] = useState("");
 
   //store typed email
   const handleEmailInput = (e) => {
@@ -44,51 +43,34 @@ const Login = () => {
   const handleLoginClick = async (e) => {
     e.preventDefault();
 
-    if (!userEmail || !userPassword) 
-    {
-      setError('Please enter both email and password.');
+    if (!userEmail || !userPassword) {
+      setError("Please enter both email and password.");
       return;
-    }
-    else
-    {
-     let emessage="";
-    //redirect to homepage
+    } else {
+      let emessage = "";
+      //redirect to homepage
 
-    //login request to API
-    const response = await axiosWithoutToken.post(
-      "auth/token/",
-      JSON.stringify({
-        email: userEmail,
-        password: userPassword,
-      })
-    ).catch(error => 
-     
-      emessage=error.message,
-      
-    
-      );;
+      //login request to API
+      const response = await axiosWithoutToken
+        .post(
+          "auth/token/",
+          JSON.stringify({
+            email: userEmail,
+            password: userPassword,
+          })
+        )
+        .catch((error) => (emessage = error.message));
 
-      if (!emessage) 
-      {
+      if (!emessage) {
         navigate("/");
         localStorage.setItem("access-token", response.data.access);
         console.log("access-token :" + response.data.access);
-        
-        dispatch(setCurrentUser(response.data.user))
-        
+
+        dispatch(setCurrentUser(response.data.user));
+      } else {
+        alert("Please check your username and password!");
       }
-      else
-      {
-       
-          alert('Please check your username and password!')
-        
-      }
-     
     }
-
-
-     
-    
   };
 
   //navigate to sign up page
@@ -103,7 +85,7 @@ const Login = () => {
         <HeaderButton onClick={handleSignUpClick}>SIGN UP</HeaderButton>
       </SignInHeader>
       <AuthForm>
-      {error && <ErrorMessage>{error}</ErrorMessage>}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
         <FormTitle>Sign In</FormTitle>
         <InputContainer>
           {/* <FormIcon src={AvatarIcon}></FormIcon> */}
@@ -121,7 +103,7 @@ const Login = () => {
             placeholder="Password"
             type="password"
             required
-            value={userPassword} 
+            value={userPassword}
             onChange={handlePasswordInput}
           />
         </InputContainer>
@@ -129,7 +111,6 @@ const Login = () => {
       </AuthForm>
     </RightSide>
   );
-}
+};
 
-
-export default Login
+export default Login;
