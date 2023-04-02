@@ -5,68 +5,78 @@ export const AuthForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 12%;
-  height: 90%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f2f2f2;
 `;
 
 export const FormTitle = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 400;
-  padding-bottom: 4%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 5%;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background-color: #e47d31;
+  }
 `;
 
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+  text-align: center;
+  width: 100%;
 `;
 
 export const InputCode = styled.input`
-  line-height: 2rem;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  width: 99%;
-  margin-top: 5%;
+  margin: 0.5rem;
+  line-height: 2.5rem;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  font-weight: 700;
+  width: 15%;
+  text-indent: 1rem;
 `;
 
 export const InputContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 100%;
+  grid-gap: 5px;
+  align-items: center:
+  justify-content: center;
+  grid-template-columns: repeat(2, 45%);
+  width: 35%;
 `;
 
 export const InputField = styled.input`
-  line-height: 2rem;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  width: 90%;
-  margin-top: 12%;
+  margin: 0.5rem;
+  line-height: 2.5rem;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  font-weight: 700;
+  width: 95%;
+  text-indent: 1rem;
 `;
 
-export const FormIcon = styled.img`
-  width: 1.5rem;
-  height: 1.5rem;
-  position: absolute;
-  margin-top: 22px;
-  margin-left: 20px;
-`;
 
 export const CompleteButton = styled.button`
-  padding: 1.2rem 6rem;
-  border-radius: 30px;
+  padding: 0.9rem 4rem;
+  border-radius: 35px;
   border: none;
-  background: linear-gradient(132.96deg, #c468ff 3.32%, #6e91f6 100%);
+  background: #e47d31;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
-  margin-top: 6%;
+  margin-top: 3%;
   &:hover {
     cursor: pointer;
   }

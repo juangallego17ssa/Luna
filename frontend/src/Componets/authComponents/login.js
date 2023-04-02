@@ -43,11 +43,7 @@ const Login = () => {
     } else {
       let emessage = "";
       //redirect to homepage
-    }
-    else
-    {
-     let emessage="";
-
+    
       //login request to API
       const response = await axiosWithoutToken
         .post(
@@ -69,7 +65,7 @@ const Login = () => {
         alert("Please check your username and password!");
       }
     }
-  };
+  }
 
 
   return (

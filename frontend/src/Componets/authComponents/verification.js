@@ -7,11 +7,9 @@ import {
   FormContainer,
   FormTitle,
   InputCode,
-  InputColumns,
   InputContainer,
   InputField,
   ProgressCirclesContainer,
-  RightSide,
   ErrorMessage,
 } from "./verification.styled";
 import { useSelector } from "react-redux";
@@ -118,7 +116,7 @@ function Verification() {
       //console.log("68: "+emessage);
       if (!emessage) {
         //redirect to login page
-        navigate("/signin");
+        navigate("/login");
 
         return;
       } else {
@@ -181,7 +179,7 @@ function Verification() {
         </p>
       </FormContainer>
       <CompleteButton onClick={handleActivateClick}>
-        Activate User Account
+        Finish registration
       </CompleteButton>
       <ProgressCirclesContainer>
         <svg height="20" width="20">

@@ -38,6 +38,7 @@ export const InputField = styled.input`
   line-height: 2.5rem;
   border: 1px solid #ebebeb;
   border-radius: 3px;
+  font-weight: 700;
   width: 15%;
   text-indent: 1rem;
 `;
