@@ -8,8 +8,12 @@ justify-content:space-between;
 border-bottom: 0.063rem solid #ebebeb;
 `
 export const FooterContainer = styled.div `
+position:absolute;
+left:0;
+bottom:0.6rem;
+right:0;
 font-size: 0.9rem;
-height: 5.688rem;
+height: 5.588rem;
 display:flex;
 flex-direction:column;
 justify-content:space-between;

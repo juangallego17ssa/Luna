@@ -1,27 +1,27 @@
 import styled from "styled-components";
 
 // import background image
-// import img from "../../Assets/profilePic"
+// import img from "../../Assets/svg/profilePic"
 // background-image: url(${img});
-export const HomepageDiv=styled.div`
-      width: 100%;
-    `
-export const HomepageBody= styled.div`
+export const HomepageDiv = styled.div`
+  width: 100%;
+`;
+export const HomepageBody = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const HomepageBannerContainerDiv = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   height: 300px;
   width: 100%;
-  
+
   background-size: cover;
   margin-bottom: 20px;
   &:after {
@@ -40,7 +40,7 @@ export const HomepageBannerContainerDiv = styled.div`
   }
 `;
 
-export const HomepageBannerSearchbarContainerDiv=styled.div`
+export const HomepageBannerSearchbarContainerDiv = styled.div`
   width: 80%;
   position: relative;
   color: white;
@@ -49,30 +49,30 @@ export const HomepageBannerSearchbarContainerDiv=styled.div`
   column-gap: 20px;
 `;
 
-export const HomepageBannerSearchbarButton=styled.button`
+export const HomepageBannerSearchbarButton = styled.button`
   border: transparent;
   border-radius: 20px;
-  background-color: #E47D31;
+  background-color: #e47d31;
   width: 100px;
 `;
 
-export const HomepageBannerSearchbarInputField=styled.input`
+export const HomepageBannerSearchbarInputField = styled.input`
   height: 25px;
   width: 50%;
   ::placeholder {
     color: grey;
   }
-  :focus{
-    outline: none; 
+  :focus {
+    outline: none;
   }
 `;
 
-export const HomepageHighligherLine=styled.hr`
+export const HomepageHighligherLine = styled.hr`
   border-top: 2px solid orange;
   width: 200px;
 `;
 
-export const RestaurantCardsContainerDiv=styled.div`
+export const RestaurantCardsContainerDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 50px;
