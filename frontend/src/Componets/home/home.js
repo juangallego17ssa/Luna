@@ -4,6 +4,8 @@ import Homepage from '../../Pages/home/homepage'
 import LoginPage from '../../Pages/authPages/loginPage'
 import RegistrationPage from '../../Pages/authPages/registrationPage'
 import VerificationPage from '../../Pages/authPages/verificationPage'
+import SearchPage from "../../Pages/searchPages/searchPage";
+import UserProfile from "../../Pages/userPages/userProfile/userProfile";
 
 
 
@@ -14,8 +16,10 @@ const Home = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/registration" element={<RegistrationPage />} />
       <Route path="/verification" element={<VerificationPage />} />
+      <Route path={"/search"} element={<SearchPage />} />
+      <Route path={"/profile"} element={<UserProfile />} />
     </Routes>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
