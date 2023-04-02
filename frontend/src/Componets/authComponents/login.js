@@ -6,25 +6,19 @@ import { setCurrentUser } from "../../Redux/Slices/currentUser";
 import { useDispatch } from "react-redux";
 import {
   AuthForm,
-  FormIcon,
   FormTitle,
-  HeaderButton,
   InputContainer,
   InputField,
-  RightSide,
-  SignInButton,
-  SignInHeader,
-  TextBesidesButton,
+  LoginButton,
   ErrorMessage,
 } from "./login.styled";
-// import AvatarIcon from "../../../Assets/svg/svgs/avatar.svg";
-// import PasswordIcon from "../../../Assets/svg/svgs/password.svg";
+
+
 
 const Login = () => {
   const [userEmail, setEmail] = useState("");
   const [userPassword, setPassword] = useState("");
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
 
   const [error, setError] = useState("");
@@ -49,7 +43,7 @@ const Login = () => {
     } else {
       let emessage = "";
       //redirect to homepage
-
+    
       //login request to API
       const response = await axiosWithoutToken
         .post(
@@ -71,45 +65,33 @@ const Login = () => {
         alert("Please check your username and password!");
       }
     }
-  };
+  }
 
-  //navigate to sign up page
-  const handleSignUpClick = () => {
-    // navigate("/signup");
-  };
 
   return (
-    <RightSide>
-      <SignInHeader>
-        <TextBesidesButton>Don't have an account?</TextBesidesButton>
-        <HeaderButton onClick={handleSignUpClick}>SIGN UP</HeaderButton>
-      </SignInHeader>
-      <AuthForm>
-        {error && <ErrorMessage>{error}</ErrorMessage>}
-        <FormTitle>Sign In</FormTitle>
-        <InputContainer>
-          {/* <FormIcon src={AvatarIcon}></FormIcon> */}
-          <InputField
-            placeholder="Email"
-            type="email"
-            required
-            value={userEmail}
-            onChange={handleEmailInput}
-          />
-        </InputContainer>
-        <InputContainer>
-          {/* <FormIcon src={PasswordIcon} alt="Password icon" /> */}
-          <InputField
-            placeholder="Password"
-            type="password"
-            required
-            value={userPassword}
-            onChange={handlePasswordInput}
-          />
-        </InputContainer>
-        <SignInButton onClick={handleLoginClick}>SIGN IN</SignInButton>
-      </AuthForm>
-    </RightSide>
+    <AuthForm>
+      <FormTitle>LOGIN</FormTitle>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
+      <InputContainer>
+        <InputField
+          placeholder="Username"
+          type="email"
+          required
+          value={userEmail}
+          onChange={handleEmailInput}
+        />
+      </InputContainer>
+      <InputContainer>
+        <InputField
+          placeholder="Password"
+          type="password"
+          required
+          value={userPassword} 
+          onChange={handlePasswordInput}
+        />
+      </InputContainer>
+      <LoginButton onClick={handleLoginClick}>Login</LoginButton>
+    </AuthForm>
   );
 };
 
