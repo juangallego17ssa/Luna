@@ -7,7 +7,8 @@ import {
     RestaurantPicture,
     StarsCommentsWrapper
 } from "./restaurantCard.styled";
-import star from '../../Assets/svg/star.svg'
+import StarRating from "../StarsRating/starsRating";
+
 const RestaurantCard = () => {
 
     return (
@@ -17,11 +18,7 @@ const RestaurantCard = () => {
             <Address>Adress</Address>
             <StarsCommentsWrapper>
                 <div>
-                    <img src={star} alt="star" />
-                    <img src={star} alt="star" />
-                    <img src={star} alt="star" />
-                    <img src={star} alt="star" />
-                    <img src={star} alt="star" />
+                    <StarRating></StarRating>
                 </div>
                 <div>24</div>
             </StarsCommentsWrapper>
