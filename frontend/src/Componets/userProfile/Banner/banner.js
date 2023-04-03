@@ -33,6 +33,7 @@ export default function Banner() {
     background-repeat: no-repeat;
     max-width: 100%;
     z-index: 0;
+    filter: brightness(80%);
   `;
 
   return (

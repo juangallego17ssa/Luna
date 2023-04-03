@@ -1,7 +1,6 @@
 import styled from "styled-components";
 //import img1 from "../../../Assets/images/b1.png";
 
-
 export const BannerElements = styled.div`
   position: relative;
   display: flex;
