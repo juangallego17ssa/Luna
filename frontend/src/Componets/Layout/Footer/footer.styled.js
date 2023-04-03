@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const FooterContainer = styled.div.attrs({
   className: "FooterContainer",
 })`
-  position: absolute;
+  /* position: flex; */
   left: 0;
   bottom: 0;
   right: 0;
@@ -12,10 +12,10 @@ export const FooterContainer = styled.div.attrs({
   height: 10vh;
   display: flex;
   flex-direction: column;
-  //justify-content: space-between;
+  /* justify-content: space-between; */
   background: #ffffff;
-  z-index: 900; // ensure this is always on the top of the elements
-  justify-content: space-evenly;
+  /* z-index: 900; // ensure this is always on the top of the elements */
+  /* justify-content: space-evenly; */
 `;
 
 export const FooterLinks = styled.div.attrs({

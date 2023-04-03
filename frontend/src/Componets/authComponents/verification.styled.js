@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
-
 export const AuthForm = styled.form`
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: #f2f2f2;
+  padding: 1% 0;
 `;
 
 export const FormTitle = styled.h2`
@@ -64,7 +65,6 @@ export const InputField = styled.input`
   width: 95%;
   text-indent: 1rem;
 `;
-
 
 export const CompleteButton = styled.button`
   padding: 0.9rem 4rem;

@@ -1,11 +1,17 @@
+import Navbar from "../../Componets/Layout/Header/navbar";
 import Login from "../../Componets/authComponents/login"
+import Footer from '../../Componets/Layout/Footer/footer'
+import { SiteWrapper } from "./authPages.styled";
+
 
 
 const LoginPage = () => {
   return (
-    <div>
-      <Login/>
-    </div>
+    <SiteWrapper>
+      <Navbar/>
+      <Login />
+      <Footer/>
+    </SiteWrapper>
   )
 }
 
