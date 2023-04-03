@@ -5,12 +5,16 @@ import styled from "styled-components";
 // background-image: url(${img});
 export const HomepageDiv = styled.div`
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 export const HomepageBody = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex-grow: 1;
 `;
 
 export const HomepageBannerContainerDiv = styled.div`

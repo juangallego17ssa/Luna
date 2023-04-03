@@ -6,10 +6,10 @@ export const NavbarContDiv = styled.div`
   height: 3.125rem;
   padding: 0.125rem 0.625rem 0.125rem 0.625rem;
   font-weight: 400;
-  position: fixed; // to stick always on the top
-  position: -webkit-sticky;
-  top: 0; // always on the top
-  z-index: 1000; // ensure this is always on the top of the elements
+  /* position: fixed; // to stick always on the top */
+  /* position: -webkit-sticky; */
+  /* top: 0; // always on the top
+  z-index: 1000; // ensure this is always on the top of the elements */
   background-color: white;
   width: 99vw;
 `;

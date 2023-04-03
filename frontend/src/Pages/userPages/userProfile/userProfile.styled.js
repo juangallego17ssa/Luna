@@ -17,6 +17,6 @@ export const UserProfileBody = styled.div.attrs({
   align-items: center;
   background: pink;
   width: 100vw;
-  height:85%;
+  height:60%;
   //height:75vh;
 `;
