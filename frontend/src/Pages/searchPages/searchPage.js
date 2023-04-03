@@ -9,8 +9,8 @@ import {
 
 // COMPONENTS IMPORTS
 import Navbar from '../../Componets/Layout/Header/navbar';
-
 import Footer from '../../Componets/Layout/Footer/footer';
+import RestaurantCard from "../../Componets/restaurant/restaurantCard";
 
 
 
@@ -18,7 +18,6 @@ import Footer from '../../Componets/Layout/Footer/footer';
 function SearchPage() {
 
   return (
-    <div className="App">
         <EntirePageDiv>
             <Navbar/>
             <SearchBarInput/>
@@ -36,16 +35,9 @@ function SearchPage() {
                     <h3 >Create Review</h3>
                 </SubNavigationDiv>
             </NavigationDiv>
-            <SearchPageContentDiv>
-
-            </SearchPageContentDiv>
-
-
-            {/* <CreateRestaurant /> */}
-                
+            <RestaurantCard/>
             <Footer/>
         </EntirePageDiv>
-    </div>
   );
 }
 
