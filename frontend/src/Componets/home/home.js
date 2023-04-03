@@ -7,6 +7,8 @@ import VerificationPage from '../../Pages/authPages/verificationPage'
 import SearchPage from "../../Pages/searchPages/searchPage";
 import UserProfile from "../../Pages/userPages/userProfile/userProfile";
 import Restaurant from '../../Pages/restaurant/restaurant'
+import RestaurantHome from '../../Pages/restaurant/restaurantHome'
+import RestaurantWriteReview from '../../Pages/restaurant/writeReview'
 
 
 const Home = () => {
@@ -18,7 +20,10 @@ const Home = () => {
       <Route path="/verification" element={<VerificationPage />} />
       <Route path={"/search"} element={<SearchPage />} />
       <Route path={"/profile"} element={<UserProfile />} />
-      <Route path="/restaurant/:id" element={<Restaurant />} />
+      <Route path="/restaurant/:id" element={<Restaurant />} >
+        <Route path="" element={<RestaurantHome />} />
+        <Route path="write_review" element={<RestaurantWriteReview />} />
+      </Route>
     </Routes>
   );
 };
