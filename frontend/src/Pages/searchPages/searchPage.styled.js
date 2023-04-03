@@ -5,19 +5,22 @@ export const EntirePageDiv = styled.div`
   flex-direction: column;
   width: 100vw;
   min-height: 100vh;
-  background: #F8F8F8;
+  background: #F2F2F2;
 `;
 export const NavigationDiv = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-self: center;
   background-color: #F2F2F2;
+  width: 40%;
+  border-bottom: solid 1px #D8D8D8;
 `;
 export const SubNavigationDiv = styled.div`
-
+  border-bottom: 2px solid transparent;
         > h3 {
-          margin-left: 3vh;
-          margin-right: 3vh;
+          margin: 1rem;
           font-size: 1.25rem;
+          border-bottom: 2px solid transparent;
           }
             :hover {
               border-bottom: darkorange solid 2px;
@@ -39,4 +42,19 @@ export const SearchBarInput= styled.input`
   flex-wrap: wrap;
   row-gap: 1.25rem;
   justify-content: center;
+`;
+
+export const RestaurantGrid = styled.div`
+  display: grid;
+  align-self: center;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  height: 100%;
+  width: 80rem;
+  gap: 2rem;
+  justify-items: center;
+  margin: 1rem 0;
+  
+
 `;

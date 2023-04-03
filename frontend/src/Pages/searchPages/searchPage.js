@@ -4,7 +4,7 @@ import {
     SubNavigationDiv,
     NavigationDiv,
     SearchPageContentDiv,
-    SearchBarInput
+    SearchBarInput, RestaurantGrid
 } from './searchPage.styled';
 
 // COMPONENTS IMPORTS
@@ -23,19 +23,31 @@ function SearchPage() {
             <SearchBarInput/>
             <NavigationDiv>
                 <SubNavigationDiv>
-                    <h3>Restaurants</h3>
+                    <h3>RESTAURANTS</h3>
                 </SubNavigationDiv>
                 <SubNavigationDiv>
-                    <h3 >Reviews</h3>
+                    <h3 >REVIEWS</h3>
                 </SubNavigationDiv>
                 <SubNavigationDiv>
-                    <h3 >Users</h3>
-                </SubNavigationDiv>
-                <SubNavigationDiv>
-                    <h3 >Create Review</h3>
+                    <h3 >USERS</h3>
                 </SubNavigationDiv>
             </NavigationDiv>
-            <RestaurantCard/>
+            <RestaurantGrid>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+            </RestaurantGrid>
             <Footer/>
         </EntirePageDiv>
   );
