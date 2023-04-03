@@ -6,7 +6,7 @@ import RegistrationPage from '../../Pages/authPages/registrationPage'
 import VerificationPage from '../../Pages/authPages/verificationPage'
 import SearchPage from "../../Pages/searchPages/searchPage";
 import UserProfile from "../../Pages/userPages/userProfile/userProfile";
-
+import Restaurant from '../../Pages/restaurant/restaurant'
 
 
 const Home = () => {
@@ -18,6 +18,7 @@ const Home = () => {
       <Route path="/verification" element={<VerificationPage />} />
       <Route path={"/search"} element={<SearchPage />} />
       <Route path={"/profile"} element={<UserProfile />} />
+      <Route path="/restaurant/:id" element={<Restaurant />} />
     </Routes>
   );
 };
