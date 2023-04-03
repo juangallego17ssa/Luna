@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const EntirePageDiv = styled.div`
-background: lightcyan;
+  background: lightcyan;
+
 `;
 export const NavigationDiv = styled.div`
 background: lightcyan;
+
 `;
 export const SubNavigationDiv = styled.div`
 
