@@ -55,6 +55,6 @@ export const RestaurantGrid = styled.div`
   gap: 2rem;
   justify-items: center;
   margin: 1rem 0;
+  flex-grow: 1;
   
-
 `;
