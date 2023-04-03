@@ -11,8 +11,11 @@ import {
 import Navbar from '../../Componets/Layout/Header/navbar';
 
 import Footer from '../../Componets/Layout/Footer/footer';
-
-
+// import Reviews from "../../Componets/Reviews/Reviews"
+// import CreateReview from "../../Componets/CreateReview/createReview"
+// import RestaurantCard from "../../components/RestaurantCard/RestaurantCard";
+// import SimpleReviewCard from "../../components/SimpleReviewCard/SimpleReviewCard";
+// import SimpleUserCard from "../../components/SimpleUserCard/SimpleUserCard";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 function SearchPage() {
