@@ -18,5 +18,7 @@ class RestaurantSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+"""
 class CategorySerializer(serializers.ModelSerializer):
     category = serializers.ChoiceField(choices=Restaurant.CATEGORIES)
+"""

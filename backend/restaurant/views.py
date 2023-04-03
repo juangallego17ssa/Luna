@@ -30,7 +30,10 @@ class RetrieveUpdateDeleteRestaurantView(RetrieveUpdateDestroyAPIView):
     lookup_field = 'id'
 
 
+"""
 class CategoryListView(ListAPIView):
+
     def get(self, request):
         serializer = CategorySerializer(many=True)
         return Response(serializer.data)
+"""

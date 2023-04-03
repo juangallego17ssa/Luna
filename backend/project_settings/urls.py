@@ -30,7 +30,7 @@ urlpatterns = [
     path('backend/api/registration/', include('registration.urls')),
     path('backend/api/users/', include('user.urls')),
     path('backend/api/restaurants/', include('restaurant.urls')),
-    path('backend/api/category/list/', CategoryListView.as_view()),
+    # path('backend/api/category/list/', CategoryListView.as_view()),
 ]
 
 if settings.DEBUG:
