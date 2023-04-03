@@ -6,18 +6,20 @@ import RegistrationPage from '../../Pages/authPages/registrationPage'
 import VerificationPage from '../../Pages/authPages/verificationPage'
 import SearchPage from "../../Pages/searchPages/searchPage";
 import UserProfile from "../../Pages/userPages/userProfile/userProfile";
+import RestaurantPage from '../../Pages/restPages/restPage'
 
 
 
 const Home = () => {
   return (
     <Routes>
-      <Route path="/" element={<Homepage/>}/>
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/registration" element={<RegistrationPage />} />
-      <Route path="/verification" element={<VerificationPage />} />
+      <Route path={"/"} element={<Homepage/>}/>
+      <Route path={"/login"} element={<LoginPage />} />
+      <Route path={"/registration"} element={<RegistrationPage />} />
+      <Route path={"/verification"} element={<VerificationPage />} />
       <Route path={"/search"} element={<SearchPage />} />
       <Route path={"/profile"} element={<UserProfile />} />
+      <Route path={"/restaurant"} element={<RestaurantPage />} />
     </Routes>
   );
 };
