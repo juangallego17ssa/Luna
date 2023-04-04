@@ -1,17 +1,21 @@
 import styled from "styled-components";
 
-export const RestaurantDiv = styled.html.attrs({
+export const RestaurantDiv = styled.div.attrs({
   className: "RestaurantDiv",
 })`
   display: flex;
   flex-direction:column;
   width: 100vw;
   height:100vh;
-  background: green;
-  display: flex;
   font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `;
 
+export const RestaurantNavBarWrapper = styled.div.attrs({
+  className: "RestaurantNavBarWrapper",
+})`
+  height: fit-content;
+  width: 100%;
+`;
 export const RestaurantBody = styled.div.attrs({
   className: "RestaurantBody",
 })`
@@ -28,10 +32,16 @@ export const RestaurantBannerImgDiv = styled.div.attrs({
   className: "RestaurantBannerImgDiv",
 })`
   position: absolute;
-  background: greenyellow;
   width: 100%;
-  height:400px;
-  z-index:-1;
+  height: fit-content;
+  z-index: -1;
+
+  > img {
+    height: 400px;
+    width: 100%;
+    object-fit: fill;
+    position: absolute;
+  }
 `;
 
 
@@ -43,61 +53,84 @@ export const RestaurantBannerTitleDiv = styled.div.attrs({
   justify-content:center;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height:204px;
+  height:160px;
 `;
 
-export const RestaurantBannerTitleName = styled.div.attrs({
-  className: "RestaurantBannerTitleName",
+export const RestaurantBannerOverlayWrapper = styled.div.attrs({
+  className: "RestaurantBannerOverlayWrapper",
 })`
-  color: white;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 35px;
-  margin-left: 130px;
+  height: 160px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
-export const RestaurantBannerTitleCategory = styled.div.attrs({
-  className: "RestaurantBannerTitleCategory",
+
+export const RestaurantBannerInformation = styled.div.attrs({
+  className: "RestaurantBannerInformation",
 })`
-  color: white;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 28px;
-  margin-left: 130px;
+  height: 160px;
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  margin-left: 8rem;
 `;
 
-export const RestaurantBannerTitleRaRe = styled.div.attrs({
-  className: "RestaurantBannerTitleCategory",
+export const RestaurantBannerInformationRestName = styled.div.attrs({
+  className: "RestaurantBannerInformationRestName",
+})`
+  width: 100%;
+  display: flex;
+  margin: 1rem 0 0.5rem 0;
+
+  > h2 {
+    color: white;
+    font-weight: 700;
+  }
+`;
+
+export const RestaurantBannerInformationRestCategory = styled.div.attrs({
+  className: "RestaurantBannerInformationRestCategory",
+})`
+  width: 100%;
+  display: flex;
+  margin: 0.5rem 0;
+
+  > h3 {
+    color: white;
+    font-weight: 400;
+  }
+`;
+
+export const RestaurantBannerInformationRestRatingReviews = styled.div.attrs({
+  className: "RestaurantBannerInformationRestRatingReviews",
+})`
+  width: 100%;
+  display: flex;
+  margin: 0.5rem 0;
+  align-items: flex-start;
+`;
+export const RestaurantBannerInformationRestReview = styled.div.attrs({
+  className: "RestaurantBannerInformationRestReview",
 })`
   display: flex;
-`;
-
-export const RestaurantBannerTitleRating = styled.div.attrs({
-  className: "RestaurantBannerTitleCategory",
-})`
+  margin: 0.5rem 0 0 1rem;
   color: white;
-  font-style: normal;
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 100;
-  font-size: 20px;
-  line-height: 40px;
-  margin-left: 130px;
+  font-weight: 200;
 `;
 
-export const RestaurantBannerTitleReview = styled.div.attrs({
-  className: "RestaurantBannerTitleCategory",
+export const RestaurantBannerAddressMap = styled.div.attrs({
+  className: "RestaurantBannerAddressMap",
 })`
-  color: white;
-  font-style: normal;
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 100;
-  font-size: 20px;
-  line-height: 40px;
-  margin-left: 20px;
+  height: 300px;
+  width: 20rem;
+  display: flex;
+  z-index: 20;
+  background: aqua;
+  margin-top: 1.75rem;
+  margin-right: 5rem;
 `;
-
-
 
 

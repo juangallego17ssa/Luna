@@ -13,7 +13,7 @@ function StarRating() {
     count={5}
     value={rating}
     onChange={ratingChanged}
-    size={40}
+    size={30}
     color1={"#d2d2d2"}
     color2={'#ffd700'} />
   );

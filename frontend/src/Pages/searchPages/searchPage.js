@@ -1,3 +1,6 @@
+// BASE IMPORTS
+import { React } from "react";
+
 // STYLED IMPORTS
 import {
     EntirePageDiv,
@@ -9,9 +12,8 @@ import {
 
 // COMPONENTS IMPORTS
 import Navbar from '../../Componets/Layout/Header/navbar';
-
 import Footer from '../../Componets/Layout/Footer/footer';
-import RestaurantCard from "../../Componets/restaurant/restaurantCard";
+import RestPage from "../restPages/restPage";
 
 
 // import Reviews from "../../Componets/Reviews/Reviews"
@@ -38,22 +40,7 @@ function SearchPage() {
                     <h3 >USERS</h3>
                 </SubNavigationDiv>
             </NavigationDiv>
-            <RestaurantGrid>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-            </RestaurantGrid>
+            <RestPage/>
             <Footer/>
         </EntirePageDiv>
   );
