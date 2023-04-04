@@ -19,3 +19,62 @@ export const Button = styled.button`
   min-width: 10%;
   display: inline-block;
 `;
+
+export const BannerTextWrapper = styled.div`
+  position: absolute;
+  left: 28.5vh;
+  width: 20%;
+  height: 50%;
+  top: 48%;
+  background-color: transparent;
+  padding-left: 6rem;
+
+  div.name {
+    font-family: "Roboto";
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0rem;
+    text-align: left;
+    margin-bottom: 0rem;
+    line-height: 100%;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  div.details {
+    font-family: "Roboto";
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    line-height: 50%;
+    color: #ffffff;
+  }
+`;
+
+export const BannerText = ({
+  firstName,
+  lastName,
+  location,
+  numberReviews,
+  numberComments,
+}) => {
+  const initial = lastName ? lastName.charAt(0) + "." : "";
+  const placeHolder = `${firstName} ${initial}`;
+  const placeHolderReview = `${numberReviews} reviews`;
+  const placeHolderComment = `${numberComments} comments`;
+
+  return (
+    <BannerTextWrapper>
+      <div className="name">{placeHolder}</div>
+      <div className="details">
+        <span>{location}</span>
+      </div>
+      <div className="details">
+        <span>{placeHolderReview}</span>
+      </div>
+      <div className="details">
+        <span>{placeHolderComment}</span>
+      </div>
+    </BannerTextWrapper>
+  );
+};
