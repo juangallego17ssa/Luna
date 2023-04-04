@@ -4,9 +4,7 @@ let baseURL = "https://lunateam3.propulsion-learn.ch/backend/api/";
 
 // ability to set a baseURL on base of which environement is running of the frontend
 if (process.env.NODE_ENV === "development") {
-  baseURL = "https://motion.propulsion-home.ch/backend/api/";
-  // uncomment this as soon the local backend is created
-  // baseURL = "localhost:8000/backend/api/"
+  baseURL = "http://localhost:8001/backend/api/";
 }
 
 
