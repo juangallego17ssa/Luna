@@ -100,7 +100,7 @@ function Verification() {
       //registration request to API
       await axiosWithoutToken
         .patch(
-          "auth/registration/validation/",
+          "registration/validate/",
           JSON.stringify({
             email: userEmail,
             username: userName,
