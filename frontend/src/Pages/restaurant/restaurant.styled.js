@@ -127,10 +127,58 @@ export const RestaurantBannerAddressMap = styled.div.attrs({
   height: 300px;
   width: 20rem;
   display: flex;
-  z-index: 20;
-  background: aqua;
+  flex-direction: column;
+  background: white;
   margin-top: 1.75rem;
   margin-right: 5rem;
+  border-radius: 3px;
+`;
+export const RestaurantBannerAddressMapImage = styled.img.attrs({
+  className: "RestaurantBannerAddressMapImage",
+})`
+  height: 150px;
+  width: 100%;
+  display: flex;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+`;
+
+export const RestaurantBannerAddressInfoWrapper = styled.div.attrs({
+  className: "RestaurantBannerAddressInfoWrapper",
+})`
+  height: 150px;
+  width: 100%;
+  display: flex;
+`;
+
+export const RestaurantBannerAddressSymbolsDiv = styled.div.attrs({
+  className: "RestaurantBannerAddressSymbolsDiv",
+})`
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const RestaurantBannerAddressSymbols = styled.img.attrs({
+  className: "RestaurantBannerAddressSymbols",
+})``;
+
+export const RestaurantBannerAddressTextDiv = styled.div.attrs({
+  className: "RestaurantBannerAddressTextDiv",
+})`
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+`;
+
+export const RestaurantBannerAddressText = styled.div.attrs({
+  className: "RestaurantBannerAddressText",
+})`
+  
 `;
 
 
