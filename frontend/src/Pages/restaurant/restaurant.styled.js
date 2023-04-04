@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const RestaurantDiv = styled.html.attrs({
+export const RestaurantDiv = styled.div.attrs({
   className: "RestaurantDiv",
 })`
   display: flex;
