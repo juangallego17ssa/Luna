@@ -7,7 +7,7 @@ from user.permissions import IsSameUser, IsStaffOrReadOnly
 User = get_user_model()
 
 
-class MyUserRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
+class RetrieveUpdateDeleteMyUserView(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsSameUser]
 
     def get_object(self):
@@ -22,13 +22,13 @@ class MyUserRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
         return UserSerializer
 
 
-class UserListView(ListAPIView):
+class ListUserView(ListAPIView):
     queryset = User.objects.all()
     permission_classes = [IsAuthenticated]
     serializer_class = UserSerializer
 
 
-class UserSearchView(ListAPIView):
+class SearchUserView(ListAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = UserSerializer
 
@@ -41,8 +41,8 @@ class UserSearchView(ListAPIView):
         return queryset
 
 
-class UserRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
+class RetrieveUpdateDestroyUserView(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
-    permission_classes = [IsAuthenticated, IsStaffOrReadOnly]
+    permission_classes = [IsSameUser, IsStaffOrReadOnly]
     serializer_class = UserSerializer
     lookup_url_kwarg = 'user_id'

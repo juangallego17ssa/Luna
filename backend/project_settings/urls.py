@@ -6,7 +6,7 @@ from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 from rest_framework_simplejwt import views as jwt_views
 from project_settings import settings
-from user.views import MyUserRetrieveUpdateDeleteView
+from user.views import RetrieveUpdateDeleteMyUserView
 from restaurant.views import BestRatedRestaurantsListView
 
 schema_view = get_schema_view(
@@ -31,7 +31,7 @@ urlpatterns = [
     path('backend/api/auth/token/verify/', jwt_views.TokenVerifyView.as_view(), name='token_refresh'),
     # path for search functionalities
     path('backend/api/home/', BestRatedRestaurantsListView.as_view()),
-    path('backend/api/me/', MyUserRetrieveUpdateDeleteView.as_view()),
+    path('backend/api/me/', RetrieveUpdateDeleteMyUserView.as_view()),
     path('backend/api/users/', include('user.urls')),
     path('backend/api/restaurants/', include('restaurant.urls')),
     path('backend/api/reviews/', include('review.urls')),
