@@ -64,7 +64,6 @@ class LikeUnlikeReviewView(RetrieveUpdateDestroyAPIView):
     def delete(self, request, *args, **kwargs):
         liked_by_user = request.user.reviews_liked.all()
         instance = self.get_object()
-        serializer = self.get_serializer(instance)
         if instance in liked_by_user:
             request.user.reviews_liked.remove(instance)
             instance.likes_count = instance.likes.count()

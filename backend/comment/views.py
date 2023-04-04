@@ -30,4 +30,3 @@ class RetrieveUpdateDeleteCommentView(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = CommentSerializer
     lookup_url_kwarg = 'comment_id'
-
