@@ -22,12 +22,12 @@ export const Button = styled.button`
 
 export const BannerTextWrapper = styled.div`
   position: absolute;
-  left: 28.5vh;
+  left: 30vh;
   width: 20%;
   height: 50%;
   top: 48%;
   background-color: transparent;
-  padding-left: 6rem;
+  padding-left: 8rem;
 
   div.name {
     font-family: "Roboto";
