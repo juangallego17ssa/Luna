@@ -1,9 +1,15 @@
 from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework import filters
 from restaurant.models import Restaurant
 from restaurant.serializers import RestaurantSerializer
-from restaurant.permissions import IsSameUser
+from restaurant.permissions import IsSameUserOrReadOnly, IsStaffOrReadOnly
+
+
+class ListRestaurantView(ListAPIView):
+    queryset = Restaurant.objects.all()
+    permission_classes = [AllowAny]
+    serializer_class = RestaurantSerializer
 
 
 class ListCreateRestaurantView(ListCreateAPIView):
@@ -18,7 +24,7 @@ class ListCreateRestaurantView(ListCreateAPIView):
 
 class RetrieveUpdateDeleteRestaurantView(RetrieveUpdateDestroyAPIView):
     queryset = Restaurant.objects.all()
-    permission_classes = [IsAuthenticatedOrReadOnly, IsSameUser]
+    permission_classes = [IsSameUserOrReadOnly, IsStaffOrReadOnly]
     serializer_class = RestaurantSerializer
     lookup_field = 'id'
 

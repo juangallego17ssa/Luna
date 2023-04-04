@@ -2,8 +2,9 @@ from rest_framework.response import Response
 from rest_framework.generics import ListCreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 from review.models import Review
-from review.serializers import ReviewSerializer, LikedReviewSerializer
+from review.serializers import ReviewSerializer
 from restaurant.models import Restaurant
+from review.permissions import IsSameUserOrReadOnly, IsStaffOrReadOnly
 
 
 class ListCreateReviewView(ListCreateAPIView):
@@ -38,7 +39,7 @@ class ListReviewsByUserView(ListAPIView):
 
 class RetrieveUpdateDeleteReviewView(RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsSameUserOrReadOnly, IsStaffOrReadOnly]
     serializer_class = ReviewSerializer
     lookup_url_kwarg = 'review_id'
 
@@ -46,7 +47,7 @@ class RetrieveUpdateDeleteReviewView(RetrieveUpdateDestroyAPIView):
 class LikeUnlikeReviewView(RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     permission_classes = [IsAuthenticated]
-    serializer_class = LikedReviewSerializer
+    serializer_class = ReviewSerializer
     lookup_url_kwarg = 'review_id'
 
     def post(self, request, *args, **kwargs):
