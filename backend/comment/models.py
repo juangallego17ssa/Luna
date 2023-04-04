@@ -12,7 +12,7 @@ class Comment(models.Model):
     date_modified = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(to=User, on_delete=models.PROTECT, related_name="comments_created")
     review = models.ForeignKey(to=Review, on_delete=models.PROTECT, related_name="comments")
-    likes = models.ManyToManyField(to=User, related_name="comments_liked")
+    likes = models.ManyToManyField(to=User, blank=True, related_name="comments_liked")
 
     def __str__(self):
         return f'{self.id} - Comment {self.text_content}'
