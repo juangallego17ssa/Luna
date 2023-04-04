@@ -1,4 +1,9 @@
-import { BannerElements, Img, Button } from "./banner.styles";
+import {
+  BannerElements,
+  Button,
+  BannerTextWrapper,
+  BannerText,
+} from "./banner.styles";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import React, { useState } from "react";
@@ -6,6 +11,11 @@ import React, { useState } from "react";
 export default function Banner() {
   const dispatch = useDispatch();
   const [banner, setBanner] = useState("");
+  const [firstName, setFirstName] = useState("Laurent");
+  const [lastName, setLasttName] = useState("Heron");
+  const [location, setLocation] = useState("Zurich, CH");
+  const [numberComments, setNumberComments] = useState(2);
+  const [numberReviews, setNumberReviews] = useState(3);
 
   const hiddenFileInput = React.useRef(null);
 
@@ -25,7 +35,6 @@ export default function Banner() {
   const Img = styled.img.attrs({
     src: `${banner ? banner : ""}`,
   })`
-    display: flex;
     position: relative;
     width: 100%;
     height: 100%;
@@ -33,7 +42,7 @@ export default function Banner() {
     background-repeat: no-repeat;
     max-width: 100%;
     z-index: 0;
-    filter: brightness(80%);
+    filter: brightness(60%);
   `;
 
   return (
@@ -48,6 +57,13 @@ export default function Banner() {
         onChange={handleBackgroundChange}
         style={{ display: "none" }}
       />
+      <BannerText
+        firstName={firstName}
+        lastName={lastName}
+        location={location}
+        numberComments={numberComments}
+        numberReviews={numberReviews}
+      ></BannerText>
     </BannerElements>
   );
 }
