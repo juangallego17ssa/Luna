@@ -9,8 +9,6 @@ import {
   RestaurantBannerTitleRaRe,
   RestaurantBannerTitleRating,
   RestaurantBannerTitleReview,
-  WriteReviewDiv,
-  ImageHolderDiv,
 } from "./restaurant.styled"
 
 import Navbar from "../../Componets/Layout/Header/navbar";
@@ -21,8 +19,8 @@ import { Outlet, useParams } from "react-router-dom";
 
 const Restaurant = () => {
 
-  
   const params = useParams();
+  const restaurantID = params.id
 
   return (
     <RestaurantDiv>
@@ -41,7 +39,8 @@ const Restaurant = () => {
             <RestaurantBannerTitleReview>X reviews</RestaurantBannerTitleReview>
           </RestaurantBannerTitleRaRe>
         </RestaurantBannerTitleDiv>
-        <Outlet></Outlet>
+        
+        <Outlet context={[restaurantID]}></Outlet>
       </RestaurantBody>
       <Footer />
     </RestaurantDiv>

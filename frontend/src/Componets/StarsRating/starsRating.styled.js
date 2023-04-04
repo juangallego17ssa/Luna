@@ -4,4 +4,3 @@ export const StarRating = styled.form`
   display: flex;
 `;
 
-
