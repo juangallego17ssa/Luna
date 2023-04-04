@@ -1,5 +1,4 @@
-import { ImageHolderDiv } from "./restaurant.styled";
-import { RestaurantHomeDiv, RestaurantHomeDetail } from "./restaurant.styled";
+import { RestaurantHomeDiv, ImageHolderDiv, RestaurantHomeDetail } from "./restaurantHome.styled";
 
 
 
