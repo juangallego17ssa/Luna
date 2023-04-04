@@ -1,21 +1,92 @@
-import { WriteReviewDiv, WriteReviewForm, WriteReviewRating, WriteReviewStars, WriteReviewStarsLabel, WriteReviewContent, WriteReviewFoot } from "./restaurant.styled";
+import { useState } from "react";
+import { useNavigate, useOutletContext } from "react-router-dom"
+import StarRating from "../../Componets/StarsRating/starsRating";
+import { WriteReviewDiv, 
+    WriteReviewForm, 
+    WriteReviewRating, 
+    WriteReviewStars,
+    WriteReviewStarsLabel, 
+    WriteReviewContent, 
+    WriteReviewFoot, 
+    SubmitButton, 
+    RequiredField} from "./writeReview.styled";
+// import { axiosWithToken } from "../../Axios/axios";
+
+
+
 
 
 
 const RestaurantWriteReview = () => {
 
-  
+
+    //// controlled form
+    // rating input
+    const [rating, setRating] = useState();
+    const handleRatingChange = event => {
+        setRating(event.target.value);
+    };
+    // review input
+    const [review, setReview] = useState("");
+    const handleReviewChange = event => {
+        setReview(event.target.value);
+    };
+    // required alert
+    const [showRequired, setShowRequired] = useState(false);
+
+    // get the id
+    const [restaurantID] = useOutletContext();
+    console.log(restaurantID)
+
+    //// handle the button submit
+    const navigate = useNavigate()
+    const handleSubmit = async() => {
+        
+        // Check the form
+        if (review === "") {
+            setShowRequired(true)
+            return
+        }
+        
+        // Prepare the request for login in and getting the token
+        const myBody = JSON.stringify({
+            text_content: review,
+            rating: rating,
+        });
+        const myConfig = {
+            method: "post",
+            data: myBody,
+        };
+
+
+        // Fetch the data and save the token in the local storage
+        try {
+            // const response = (await axiosWithToken(myConfig)).data;
+            navigate(`/restaurant/${restaurantID}`)
+        } catch (exception) {
+            window.alert("Invalid credentials!")
+        }
+    
+        console.log("Submit")
+    
+    
+    }
+
+
+
     return (
         <WriteReviewDiv>
 
-            <WriteReviewForm>
+            <WriteReviewForm onSubmit= {(event)=>event.preventDefault()}>
 
                 <WriteReviewRating>
-                    <WriteReviewStars></WriteReviewStars>
+                    <WriteReviewStars><StarRating onChange={handleRatingChange}></StarRating></WriteReviewStars>
                     <WriteReviewStarsLabel>Select your rating</WriteReviewStarsLabel>
-                </WriteReviewRating>
-                <WriteReviewContent></WriteReviewContent>
+                </WriteReviewRating>    
+                <WriteReviewContent onChange={handleReviewChange}></WriteReviewContent>
                 <WriteReviewFoot>
+                    <div>{ showRequired ? <RequiredField>This field is required</RequiredField> : <></>} </div>
+                    <SubmitButton onClick={handleSubmit}>SUBMIT</SubmitButton>
                 </WriteReviewFoot>
             
             </WriteReviewForm>
