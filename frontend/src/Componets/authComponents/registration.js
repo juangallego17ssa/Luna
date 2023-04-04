@@ -44,7 +44,7 @@ function Registration() {
       //registration request to API
       await axiosWithoutToken
         .post(
-          "auth/registration/",
+          "registration/",
           JSON.stringify({
             email: userEmail,
           })
