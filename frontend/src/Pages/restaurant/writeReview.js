@@ -36,12 +36,14 @@ const RestaurantWriteReview = () => {
 
     // get the id
     const [restaurantID] = useOutletContext();
-    console.log(restaurantID)
 
     //// handle the button submit
     const navigate = useNavigate()
-    const handleSubmit = async() => {
+    const handleSubmit = async(event) => {
         
+        event.preventDefault();
+
+
         // Check the form
         if (review === "") {
             setShowRequired(true)
@@ -64,7 +66,7 @@ const RestaurantWriteReview = () => {
             // const response = (await axiosWithToken(myConfig)).data;
             navigate(`/restaurant/${restaurantID}`)
         } catch (exception) {
-            window.alert("Invalid credentials!")
+            window.alert("Error!")
         }
     
         console.log("Submit")
