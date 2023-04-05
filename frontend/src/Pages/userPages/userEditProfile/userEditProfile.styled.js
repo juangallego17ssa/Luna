@@ -4,7 +4,7 @@ export const UserProfileDiv = styled.html.attrs({
   className: "UserProfileDiv",
 })`
   width: 90vw;
-  height: 90vh;
+  height: 100vh;
   background: green;
 `;
 
