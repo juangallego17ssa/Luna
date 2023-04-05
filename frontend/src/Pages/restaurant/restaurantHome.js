@@ -21,7 +21,7 @@ import money from '../../Assets/svg/money.svg';
 import Reviews from "../../Componets/reviewsCard/reviewsCard";
 
 
-const RestaurantHome = () => {
+const RestaurantHome = (props) => {
   return (
     <RestaurantHomeDiv>
       <ImageHolderDiv />
