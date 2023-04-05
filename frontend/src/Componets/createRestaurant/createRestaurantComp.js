@@ -171,16 +171,16 @@ function CreateRestaurantComp() {
             <option value="1">Asian</option>
             <option value="2">Burgers</option>
             <option value="3">Chinese</option>
-            <option value="3">Greek</option>
-            <option value="4">Healthy</option>
-            <option value="5">Italian</option>
-            <option value="6">Mexican</option>
-            <option value="7">Pizza</option>
-            <option value="8">Poke</option>
-            <option value="9">Sandwich</option>
-            <option value="10">Sushi</option>
-            <option value="11">Spanish</option>
-            <option value="12">Vegan</option>
+            <option value="4">Greek</option>
+            <option value="5">Healthy</option>
+            <option value="6">Italian</option>
+            <option value="7">Mexican</option>
+            <option value="8">Pizza</option>
+            <option value="9">Poke</option>
+            <option value="10">Sandwich</option>
+            <option value="11">Sushi</option>
+            <option value="12">Spanish</option>
+            <option value="13">Vegan</option>
           </InputSelect>
           <InputSelect id="countryInput" onChange={handleCountry}>
             <option value="" disabled selected>Select a value...</option>

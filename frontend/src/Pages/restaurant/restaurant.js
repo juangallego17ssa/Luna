@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useState } from "react";
 import {
   RestaurantDiv,
   RestaurantBody,
@@ -26,6 +26,7 @@ const Restaurant = () => {
 
   const params = useParams();
   const restaurantID = params.id
+  const [showMap, setShowMap] = useState(true)
 
   return (
     <RestaurantDiv>
@@ -54,10 +55,10 @@ const Restaurant = () => {
                 </RestaurantBannerInformationRestReview>
               </RestaurantBannerInformationRestRatingReviews>
             </RestaurantBannerInformation>
-            <RestaurantBannerAddressMap>Adresse</RestaurantBannerAddressMap>
+            {showMap ? <RestaurantBannerAddressMap>Adresse</RestaurantBannerAddressMap> : "" }
           </RestaurantBannerOverlayWrapper>
         </RestaurantBannerTitleDiv>
-        <Outlet context={[restaurantID]}></Outlet>
+        <Outlet context={[showMap, setShowMap, restaurantID]}></Outlet>
       </RestaurantBody>
       <Footer />
     </RestaurantDiv>
