@@ -1,3 +1,4 @@
+from rest_framework import filters
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListAPIView
@@ -30,7 +31,15 @@ class MyUserRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
 
 
 class RetrieveUpdateDeleteMyUserView(RetrieveUpdateDestroyAPIView):
-    permission_classes = [IsSameUser]
+    """
+    Functionalities:
+        - List the details of the current, logged-in user
+        - Edit the details of the current, logged-in user
+        - Delete the current, logged-in user
+    Permissions:
+        - Only allowed to own information of authenticated users
+    """
+    permission_classes = [IsAuthenticated, IsSameUser]
 
     def get_object(self):
         return self.request.user
@@ -45,12 +54,28 @@ class RetrieveUpdateDeleteMyUserView(RetrieveUpdateDestroyAPIView):
 
 
 class ListUserView(ListAPIView):
+    """
+    Functionalities:
+        - List all existing users
+    Permissions:
+        - Only allowed to authenticated users
+    """
     queryset = User.objects.all()
+    search_fields = ['username', 'email']
+    filter_backends = [filters.SearchFilter]
     permission_classes = [IsAuthenticated]
     serializer_class = UserSerializer
 
 
 class SearchUserView(ListAPIView):
+    """
+    Functionalities:
+        - Search for a specific user
+    Params:
+        - 'search' required (object to be displayed)
+    Permissions:
+        - Only allowed to authenticated users
+    """
     permission_classes = [IsAuthenticated]
     serializer_class = UserSerializer
 
@@ -64,13 +89,30 @@ class SearchUserView(ListAPIView):
 
 
 class RetrieveUpdateDestroyUserView(RetrieveUpdateDestroyAPIView):
+    """
+    Functionalities:
+        - List the details of a specific user
+        - Edit the details of a specific user
+        - Delete an existing user
+    Params:
+        - Id of user necessary
+    Permissions:
+        - Edit and delete functionalities only allowed to authenticated user and company's staff
+    """
     queryset = User.objects.all()
-    permission_classes = [IsSameUser, IsStaffOrReadOnly]
+    permission_classes = [IsAuthenticated, IsSameUser, IsStaffOrReadOnly]
     serializer_class = UserSerializer
     lookup_url_kwarg = 'user_id'
 
 
 class SearchView(APIView):
+    """
+    Functionalities:
+        - Search for ‘restaurants’, ‘reviews’ or ‘users’. {type: ‘restaurants’, "‘search_string’: ‘Pub’}.
+    Params:
+        - 'type' required (‘restaurants’, ‘reviews’ or ‘users’)
+        - 'search_string' required (object to be displayed)
+    """
     permission_classes = [AllowAny]
 
     def get(self, request):

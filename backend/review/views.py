@@ -8,6 +8,15 @@ from review.permissions import IsSameUserOrReadOnly, IsStaffOrReadOnly
 
 
 class ListCreateReviewView(ListCreateAPIView):
+    """
+    Functionalities:
+        - List existing reviews in queryset, sorted by review creation date
+        - Create a new review for a specific restaurant
+    Params:
+        - Id of restaurant necessary
+    Permissions:
+        - Only allowed to authenticated users
+    """
     queryset = Review.objects.all().order_by('date_created')
     permission_classes = [IsAuthenticated]
     serializer_class = ReviewSerializer
@@ -17,7 +26,16 @@ class ListCreateReviewView(ListCreateAPIView):
         serializer.save(user=self.request.user, restaurant=restaurant)
 
 
-class ListReviewsByRestaurantView(ListAPIView):
+class ListReviewByRestaurantView(ListAPIView):
+    """
+    Functionalities:
+        - List all existing reviews by a specific restaurant id
+        - Response sorted by review creation date
+    Params:
+        - Id of restaurant necessary
+    Permissions:
+        - Only allowed to authenticated users
+    """
     permission_classes = [IsAuthenticated]
     serializer_class = ReviewSerializer
     lookup_url_kwarg = 'restaurant_id'
@@ -27,7 +45,16 @@ class ListReviewsByRestaurantView(ListAPIView):
         return Review.objects.filter(restaurant_id=restaurant_id).order_by('date_created')
 
 
-class ListReviewsByUserView(ListAPIView):
+class ListReviewByUserView(ListAPIView):
+    """
+    Functionalities:
+        - List all existing reviews by a specific user id
+        - Response sorted by review creation date
+    Params:
+        - Id of user necessary
+    Permissions:
+        - Only allowed to authenticated users
+    """
     permission_classes = [IsAuthenticated]
     serializer_class = ReviewSerializer
     lookup_url_kwarg = 'user_id'
@@ -38,6 +65,16 @@ class ListReviewsByUserView(ListAPIView):
 
 
 class RetrieveUpdateDeleteReviewView(RetrieveUpdateDestroyAPIView):
+    """
+    Functionalities:
+        - List the details of a specific review
+        - Edit the details of a specific review
+        - Delete an existing review
+    Params:
+        - Id of review necessary
+    Permissions:
+        - Edit and delete functionalities only allowed to review user
+    """
     queryset = Review.objects.all()
     permission_classes = [IsSameUserOrReadOnly, IsStaffOrReadOnly]
     serializer_class = ReviewSerializer
@@ -45,6 +82,14 @@ class RetrieveUpdateDeleteReviewView(RetrieveUpdateDestroyAPIView):
 
 
 class LikeUnlikeReviewView(RetrieveUpdateDestroyAPIView):
+    """
+    Functionalities:
+        - Like or unlike a specific review
+    Params:
+        - Id of review necessary
+    Permissions:
+        - Only allowed to restaurant user
+    """
     queryset = Review.objects.all()
     permission_classes = [IsAuthenticated]
     serializer_class = ReviewSerializer
@@ -75,16 +120,30 @@ class LikeUnlikeReviewView(RetrieveUpdateDestroyAPIView):
 
 
 class ListLikedReviewByUserView(ListAPIView):
+    """
+    Functionalities:
+        - List all existing reviews created by the current, logged-in user
+        - Response sorted by review creation date
+    Permissions:
+        - Only allowed to authenticated users
+    """
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Review.objects.filter(likes=self.request.user)
+        return Review.objects.filter(likes=self.request.user).order_by('date_created')
 
 
 class ListReviewCommentedByUserView(ListAPIView):
+    """
+    Functionalities:
+        - List all existing reviews commented by the current, logged-in user
+        - Response sorted by review creation date
+    Permissions:
+        - Only allowed to authenticated users
+    """
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Review.objects.filter(comments__user=self.request.user)
+        return Review.objects.filter(comments__user=self.request.user).order_by('date_created')
