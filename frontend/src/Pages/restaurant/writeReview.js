@@ -10,6 +10,7 @@ import { WriteReviewDiv,
     WriteReviewFoot, 
     SubmitButton, 
     RequiredField} from "./writeReview.styled";
+import { axiosWithToken } from "../../Axios/axios";
 // import { axiosWithToken } from "../../Axios/axios";
 
 
@@ -35,7 +36,8 @@ const RestaurantWriteReview = () => {
     const [showRequired, setShowRequired] = useState(false);
 
     // get the id
-    const [restaurantID] = useOutletContext();
+    const [showMap, setShowMap, restaurantID] = useOutletContext();
+    setShowMap(false)
 
     //// handle the button submit
     const navigate = useNavigate()
@@ -53,7 +55,7 @@ const RestaurantWriteReview = () => {
         // Prepare the request for login in and getting the token
         const myBody = JSON.stringify({
             text_content: review,
-            rating: rating,
+            rating: 5,
         });
         const myConfig = {
             method: "post",
@@ -63,10 +65,12 @@ const RestaurantWriteReview = () => {
 
         // Fetch the data and save the token in the local storage
         try {
-            // const response = (await axiosWithToken(myConfig)).data;
+            const response = (await axiosWithToken(`/reviews/new/${restaurantID}/`, myConfig)).data;
+            setShowMap(true)
             navigate(`/restaurant/${restaurantID}`)
         } catch (exception) {
             window.alert("Error!")
+            console.log(exception)
         }
     
         console.log("Submit")

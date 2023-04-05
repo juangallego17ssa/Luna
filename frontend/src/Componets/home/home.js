@@ -29,7 +29,7 @@ const Home = () => {
         <Route path="" element={<RestaurantHome />} />
         <Route path="write_review" element={<RestaurantWriteReview />} />
       </Route>
-      <Route path={"/newRestaurant"} element={<CreateRestaurant />} />
+      <Route path={"/createRestaurant"} element={<CreateRestaurant />} />
     </Routes>
   );
 };
