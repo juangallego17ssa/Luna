@@ -5,7 +5,7 @@ export const ProfileWrapper = styled.div`
   left: 13vh;
   width: 15vw;
   height: 20vh;
-  top: 20vh;
+  top: 15vh;
   background-color: blue;
   margin: 10px;
 `;
