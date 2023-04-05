@@ -40,6 +40,9 @@ export const ReviewCommentDiv = styled.div.attrs({
   className: "ReviewCommentDiv",
 })`
   display: flex;
+  justify-content: space-between;
   width: 100%;
-  margin: 0.5rem 0.5rem;
+  /* margin: 0.5rem 0.5rem 0.5rem 0.5rem; */
+  padding: 0.5rem;
+  box-sizing: border-box;
 `;

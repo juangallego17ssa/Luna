@@ -6,6 +6,10 @@ import Home from "./Componets/home/home";
 import { Provider } from "react-redux";
 import myStore from "./Redux/store";
 import { BrowserRouter } from "react-router-dom";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
+
+TimeAgo.addDefaultLocale(en);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
