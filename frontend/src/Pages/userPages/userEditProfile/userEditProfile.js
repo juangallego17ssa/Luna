@@ -7,10 +7,6 @@ const ProfileEdit = () => {
     return () => (document.body.style.overflow = "scroll");
   });
 
-  return (
-    <div>
-      <UserProfile>edit profile</UserProfile>
-    </div>
-  );
+  return <div>Edit Profile</div>;
 };
 export default ProfileEdit;

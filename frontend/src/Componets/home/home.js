@@ -12,7 +12,7 @@ import Restaurant from '../../Pages/restaurant/restaurant'
 import CreateRestaurant from '../../Pages/createRestaurant/createRestaurant'
 
 import ProfileRestaurants from "../../Pages/userPages/userRestaurant/userRestaurant";
-import ProfileComments from "../../Pages/userPages/userComment/userComment";
+import ProfileCommentss from "../../Pages/userPages/userComment/userComment";
 import ProfileEdit from "../../Pages/userPages/userEditProfile/userEditProfile";
 import ProfileReviews from "../../Pages/userPages/userReview/userReview";
 

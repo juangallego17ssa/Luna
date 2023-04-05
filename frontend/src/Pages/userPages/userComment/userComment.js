@@ -1,11 +1,9 @@
 import UserProfile from "../userProfile/userProfile";
-export default function ProfileComment() {
+export default function ProfileComments() {
   return (
     <>
       <div>
-        <div>
-          <UserProfile>Comment</UserProfile>
-        </div>
+        <div>Comment</div>
       </div>
     </>
   );

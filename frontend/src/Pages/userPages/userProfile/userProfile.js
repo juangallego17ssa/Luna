@@ -8,10 +8,10 @@ import About from "../../../Componets/userProfile/about/about";
 import Profile from "../../../Componets/userProfile/Profile/profile";
 
 const UserProfile = () => {
-  // useEffect(() => {
-  //   document.body.style.overflow = "hidden";
-  //   return () => (document.body.style.overflow = "scroll");
-  // });
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => (document.body.style.overflow = "scroll");
+  });
 
   return (
     <UserProfileDiv>

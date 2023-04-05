@@ -1,11 +1,7 @@
 import UserProfile from "../userProfile/userProfile";
 
 const ProfileRestaurants = () => {
-  return (
-    <div>
-      <UserProfile>MOREREE</UserProfile>
-    </div>
-  );
+  return <div>Restaurants</div>;
 };
 
 export default ProfileRestaurants;

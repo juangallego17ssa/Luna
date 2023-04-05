@@ -15,7 +15,7 @@ export const UserProfileBody = styled.div.attrs({
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: pink;
+  background: #f2f2f2;
   width: 100vw;
   height: 60%;
   //height:75vh;
