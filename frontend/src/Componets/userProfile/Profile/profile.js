@@ -5,7 +5,7 @@ import {
   ProfileContainer,
 } from "./profile.styled";
 import styled from "styled-components";
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import EditIcon from "../../../Assets/svg/edit.svg";
 import RestaurantIcon from "../../../Assets/svg/restaurant.svg";
@@ -25,6 +25,10 @@ import {
 } from "../../../Redux/Slices/userProfile";
 
 export default function Profile() {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => (document.body.style.overflow = "scroll");
+  });
   let user = useSelector((state) => state.userprofile.user_profile);
   const hiddenFileInput = React.useRef(null);
   const [avatar, setAvatar] = useState("");

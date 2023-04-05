@@ -6,7 +6,7 @@ import {
 } from "./banner.styles";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Banner() {
   const dispatch = useDispatch();

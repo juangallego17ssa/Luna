@@ -74,9 +74,9 @@ export const InputText = styled.input.attrs({
 })`
   border: 1px solid #ebebeb;
   border-radius: 3px;
-  width: 100%;
+  width: 50%;
   text-indent: 1rem;
-  height: 100%;
+  height: 50%;
   
 
   font-style: normal;

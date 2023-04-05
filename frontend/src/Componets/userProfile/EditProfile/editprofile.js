@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { EditUserProfileWrapper, SubmitButton } from "./editprofile.styled";
+import {
+  EditUserProfileWrapper,
+  SubmitButton,
+  InputText,
+  DescriptionContent,
+} from "./editprofile.styled";
 
 const EditUserProfile = ({ onSave }) => {
   const [username, setUsername] = useState("");
@@ -101,13 +106,18 @@ const EditUserProfile = ({ onSave }) => {
         <label htmlFor="description">
           <h1 className="subtitle">Description</h1>
         </label>
-        <h1
+        <DescriptionContent
           id="description"
+          name="description"
+          rows="3"
+          cols="50"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-        />
+        ></DescriptionContent>
 
-        <SubmitButton  type="submit">Save</SubmitButton >
+        <div>
+          <SubmitButton type="submit">Save</SubmitButton>
+        </div>
       </form>
     </EditUserProfileWrapper>
   );
