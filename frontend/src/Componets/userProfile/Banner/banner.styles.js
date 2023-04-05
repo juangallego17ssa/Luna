@@ -14,8 +14,8 @@ export const Button = styled.button`
   position: absolute;
   background-color: white;
   position: absolute; /* Add this */
-  left: 85vw; /* Also add this for position: absolute to work properly */
-  top: 15vh;
+  left: 86vw; /* Also add this for position: absolute to work properly */
+  top: 10vh;
   border-radius: 3px;
   min-width: 10%;
   display: inline-block;
