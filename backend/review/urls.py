@@ -1,6 +1,6 @@
 from django.urls import path
 from review.views import ListCreateReviewView, ListReviewsByRestaurantView, ListReviewsByUserView, \
-    RetrieveUpdateDeleteReviewView, LikeUnlikeReviewView, ListLikedReviewByUserView
+    RetrieveUpdateDeleteReviewView, LikeUnlikeReviewView, ListLikedReviewByUserView, ListReviewCommentedByUserView
 
 urlpatterns = [
     # backend/api/reviews/
@@ -10,5 +10,5 @@ urlpatterns = [
     path('<int:review_id>/', RetrieveUpdateDeleteReviewView.as_view()),
     path('like/<int:review_id>/', LikeUnlikeReviewView.as_view()),
     path('likes/', ListLikedReviewByUserView.as_view()),
-    # path('comments/, .as_view()),
+    path('comments/', ListReviewCommentedByUserView.as_view()),
 ]

@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from comment.models import Comment
 from comment.serializers import CommentSerializer
 from review.models import Review
+from comment.permissions import IsSameUserOrReadOnly, IsStaffOrReadOnly
 
 
 class ListCreateCommentView(ListCreateAPIView):
@@ -15,7 +16,7 @@ class ListCreateCommentView(ListCreateAPIView):
         serializer.save(user=self.request.user, review=review)
 
 
-class ListCommentsByUserView(ListAPIView):
+class ListCommentByUserView(ListAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = CommentSerializer
     lookup_url_kwarg = 'user_id'
@@ -27,6 +28,6 @@ class ListCommentsByUserView(ListAPIView):
 
 class RetrieveUpdateDeleteCommentView(RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsSameUserOrReadOnly, IsStaffOrReadOnly]
     serializer_class = CommentSerializer
     lookup_url_kwarg = 'comment_id'
