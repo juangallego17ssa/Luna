@@ -1,3 +1,4 @@
+import React from "react";
 import {
   RestaurantHomeDiv,
   ImageHolderDiv,
@@ -17,6 +18,7 @@ import {
 
 import clock from '../../Assets/svg/clock.svg';
 import money from '../../Assets/svg/money.svg';
+import Reviews from "../../Componets/reviewsCard/reviewsCard";
 
 
 const RestaurantHome = () => {
@@ -33,7 +35,11 @@ const RestaurantHome = () => {
               </RestaurantHomeDetailReviewsFilterButton>
             </RestaurantHomeDetailReviewsFilterDiv>
             <RestaurantHomeDetailReviewsGrid>
-              GRID
+              <Reviews/>
+              <Reviews/>
+              <Reviews/>
+              <Reviews/>
+          
             </RestaurantHomeDetailReviewsGrid>
           </RestaurantHomeDetailReviews>
           <RestaurantHomeDetailInformations>

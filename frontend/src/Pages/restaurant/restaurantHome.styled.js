@@ -21,6 +21,7 @@ export const RestaurantHomeDiv = styled.div.attrs({
     align-items: center;
     width: 100%;
     height:240px;
+
   `;
     
 
@@ -33,7 +34,8 @@ export const RestaurantHomeDetailWrapperDiv = styled.div.attrs({
     align-items: center;
     background-color: #F2F2F2;
     width: 100%;
-    flex-grow:1;
+    height: 100%;
+    flex-grow: 1;
     
   `;
 
@@ -100,9 +102,10 @@ export const RestaurantHomeDetailReviewsGrid = styled.div.attrs({
   className: "RestaurantHomeDetailReviewsGrid",
 })`
   display: grid;
-  margin-top: 1rem;
-  flex-grow: 1;
-
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  width: 100%;
+  gap: 1rem;
 `;
 
 // Restaurant Informations on the right side
@@ -157,6 +160,7 @@ export const RestaurantHomeDetailInformationsButtonsDiv = styled.div.attrs({
   margin-top: 0.5rem;
   
 `;
+
 export const RestaurantHomeDetailInformationsButtons = styled.button.attrs({
   className: "RestaurantHomeDetailInformationsOpeningHours",
 })`

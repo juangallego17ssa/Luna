@@ -15,17 +15,19 @@ export const RestaurantNavBarWrapper = styled.div.attrs({
 })`
   height: fit-content;
   width: 100%;
+
 `;
 export const RestaurantBody = styled.div.attrs({
   className: "RestaurantBody",
 })`
-  display: flex;
-  flex-grow:1;
+  /* display: flex; */
+  position: relative;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   width: 100%;
-  height:100%;
+  flex-grow: 1;
+  
 `;
 
 export const RestaurantBannerImgDiv = styled.div.attrs({
@@ -36,12 +38,11 @@ export const RestaurantBannerImgDiv = styled.div.attrs({
   height: fit-content;
   z-index: -1;
 
+
   > img {
     height: 400px;
     width: 100%;
     object-fit: fill;
-    position: absolute;
-  }
 `;
 
 
@@ -50,10 +51,10 @@ export const RestaurantBannerTitleDiv = styled.div.attrs({
 })`
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height:160px;
+  height: 160px;
 `;
 
 export const RestaurantBannerOverlayWrapper = styled.div.attrs({
