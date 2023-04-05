@@ -16,6 +16,8 @@ import {
   InputSelect,
   Basic,
   LabelText,
+  AddImageDiv,
+  AddImageInput,
 } from "./createRestaurantComp.styled";
 import { useSelector } from "react-redux";
 
@@ -104,6 +106,7 @@ function CreateRestaurantComp() {
   const handleCreateClick = async (e) => {
     e.preventDefault();
 
+
     if (!name ||
         !category ||
         !country ||
@@ -164,23 +167,23 @@ function CreateRestaurantComp() {
           
           <InputText id="nameInput" onChange={handleName}/>
           <InputSelect id="categoryInput" onChange={handleCategory}>
-            <option value="" disabled defaultValue>Select a value...</option>
+            <option value="" disabled selected>Select a value...</option>
             <option value="1">Asian</option>
             <option value="2">Burgers</option>
             <option value="3">Chinese</option>
-            <option value="3">Greek</option>
-            <option value="4">Healthy</option>
-            <option value="5">Italian</option>
-            <option value="6">Mexican</option>
-            <option value="7">Pizza</option>
-            <option value="8">Poke</option>
-            <option value="9">Sandwich</option>
-            <option value="10">Sushi</option>
-            <option value="11">Spanish</option>
-            <option value="12">Vegan</option>
+            <option value="4">Greek</option>
+            <option value="5">Healthy</option>
+            <option value="6">Italian</option>
+            <option value="7">Mexican</option>
+            <option value="8">Pizza</option>
+            <option value="9">Poke</option>
+            <option value="10">Sandwich</option>
+            <option value="11">Sushi</option>
+            <option value="12">Spanish</option>
+            <option value="13">Vegan</option>
           </InputSelect>
           <InputSelect id="countryInput" onChange={handleCountry}>
-            <option value="" disabled defaultValue>Select a value...</option>
+            <option value="" disabled selected>Select a value...</option>
             <option value="AT">Austria</option>
             <option value="DE">Germany</option>
             <option value="CH">Switzerland</option>
@@ -236,12 +239,16 @@ function CreateRestaurantComp() {
           
           <InputText id="openingInput" onChange={handleOpeningHours}/>
           <InputSelect id="priceInput" onChange={handlePriceLevel} >
-            <option value="" disabled defaultValue hidden>Select a value...</option>
+            <option value="" disabled selected hidden>Select a value...</option>
             <option value="1">$</option>
             <option value="2">$$</option>
             <option value="3">$$$</option>
             <option value="4">$$$$</option>
           </InputSelect>
+          <AddImageDiv>
+                <CompleteButton onclick={""} >CHOOSE A FILE...</CompleteButton>
+                <AddImageInput type="file" accept="image/*" onChange={handleImage}></AddImageInput>
+          </AddImageDiv>
           <InputSelect id="imageInput" onChange={handleCountry}/>
 
           { showRequired ? <RequiredField>This field is required</RequiredField> : <></>}

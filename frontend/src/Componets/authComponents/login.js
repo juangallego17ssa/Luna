@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { axiosWithoutToken } from "../../Axios/axios";
 import { setCurrentUser } from "../../Redux/Slices/currentUser";
+
 import { useDispatch } from "react-redux";
 import {
   AuthForm,
@@ -12,8 +13,6 @@ import {
   LoginButton,
   ErrorMessage,
 } from "./login.styled";
-
-
 
 const Login = () => {
   const [userEmail, setEmail] = useState("");
@@ -43,7 +42,7 @@ const Login = () => {
     } else {
       let emessage = "";
       //redirect to homepage
-    
+
       //login request to API
       const response = await axiosWithoutToken
         .post(
@@ -65,8 +64,7 @@ const Login = () => {
         alert("Please check your username and password!");
       }
     }
-  }
-
+  };
 
   return (
     <AuthForm>
@@ -86,7 +84,7 @@ const Login = () => {
           placeholder="Password"
           type="password"
           required
-          value={userPassword} 
+          value={userPassword}
           onChange={handlePasswordInput}
         />
       </InputContainer>

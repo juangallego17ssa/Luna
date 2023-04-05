@@ -4,7 +4,7 @@ export const AboutWrapper = styled.div`
   right: 2vw;
   width: 30vw;
   height: 55vh;
-  top: 32.2vh;
+  top: 26vh;
   z-index: 100;
   background: #f2f2f2;
   padding-left: 0.5rem;
@@ -12,7 +12,7 @@ export const AboutWrapper = styled.div`
     font-family: "RobotoBold";
     font-style: normal;
     font-weight: 1000;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 100%;
     text-transform: uppercase;
     letter-spacing: 0rem;
@@ -21,7 +21,7 @@ export const AboutWrapper = styled.div`
   }
   div.title {
     font-family: "RobotoBold";
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 900;
     letter-spacing: 0rem;
     text-align: left;

@@ -91,6 +91,7 @@ const Restaurant = () => {
   }, []);
 
   
+  const [showMap, setShowMap] = useState(true)
 
   return (
     <RestaurantDiv>
@@ -120,7 +121,7 @@ const Restaurant = () => {
               </RestaurantBannerInformationRestRatingReviews>
             </RestaurantBannerInformation>
 
-            <RestaurantBannerAddressMap>
+            {showMap ? <RestaurantBannerAddressMap>
               <RestaurantBannerAddressMapImage
                 src={map}
                 alt="restaurant location map"
@@ -143,10 +144,10 @@ const Restaurant = () => {
                   </RestaurantBannerAddressText>
                 </RestaurantBannerAddressTextDiv>
               </RestaurantBannerAddressInfoWrapper>
-            </RestaurantBannerAddressMap>
+            </RestaurantBannerAddressMap> : "" }
           </RestaurantBannerOverlayWrapper>
         </RestaurantBannerTitleDiv>
-        <Outlet context={[restaurantID]} restaurant={restaurantData} reviews={reviewData}></Outlet>
+        <Outlet context={[showMap, setShowMap, restaurantID]}></Outlet>
       </RestaurantBody>
       <Footer />
     </RestaurantDiv>

@@ -130,6 +130,26 @@ export const RequiredField = styled.span.attrs({
 `;
 
 
+export const AddImageDiv = styled.div`
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width: 70%;
+`
+export const AddImageInput = styled.input`
+  display:none;
+`
+
+
+
+
+
+
+
+
+
+
+
 export const InputContainer = styled.div`
   display: grid;
   grid-gap: 5px;
