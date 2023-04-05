@@ -11,9 +11,9 @@ from restaurant.views import ListBestRatedRestaurantView, ListCategoryView
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Luna Restaurants",
+        title="Luna Restaurants API",
         default_version='v1',
-        description="Example",
+        description="Luna Restaurants API developed by team no. 3",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="learn@propulsionacademy.com"),
         license=openapi.License(name="BSD License"),
@@ -23,19 +23,30 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path('backend/api/docs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-swagger-ui'),
     path('backend/api/admin/', admin.site.urls),
+
+    path('backend/api/docs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-swagger-ui'),
+
     path('backend/api/registration/', include('registration.urls')),
+
     path('backend/api/auth/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('backend/api/auth/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('backend/api/auth/token/verify/', jwt_views.TokenVerifyView.as_view(), name='token_refresh'),
+
     path('backend/api/search/', SearchView.as_view()),
+
     path('backend/api/home/', ListBestRatedRestaurantView.as_view()),
+
     path('backend/api/me/', RetrieveUpdateDeleteMyUserView.as_view()),
+
     path('backend/api/users/', include('user.urls')),
+
     path('backend/api/restaurants/', include('restaurant.urls')),
+
     path('backend/api/reviews/', include('review.urls')),
+
     path('backend/api/review/comment/', include('comment.urls')),
+
     path('backend/api/category/list/', ListCategoryView.as_view()),
 ]
 
