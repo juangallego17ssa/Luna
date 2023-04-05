@@ -5,8 +5,9 @@ export const BannerElements = styled.div`
   position: relative;
   display: flex;
   width: 100vw;
-  height: 22vh;
-  background-color: aliceblue;
+  height: 15vh;
+  background-color: green;
+  z-index: -1;
 `;
 
 export const Button = styled.button`
@@ -18,16 +19,18 @@ export const Button = styled.button`
   border-radius: 3px;
   min-width: 10%;
   display: inline-block;
+  z-index: 10;
 `;
 
 export const BannerTextWrapper = styled.div`
   position: absolute;
-  left: 30vh;
+  left: 25vh;
   width: 20%;
   height: 50%;
-  top: 48%;
+  top: 28%;
   background-color: transparent;
   padding-left: 8rem;
+  z-index: 100;
 
   div.name {
     font-family: "Roboto";
