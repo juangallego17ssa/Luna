@@ -80,3 +80,11 @@ class ListLikedReviewByUserView(ListAPIView):
 
     def get_queryset(self):
         return Review.objects.filter(likes=self.request.user)
+
+
+class ListReviewCommentedByUserView(ListAPIView):
+    serializer_class = ReviewSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Review.objects.filter(comments__user=self.request.user)
