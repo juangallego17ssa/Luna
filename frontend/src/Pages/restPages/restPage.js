@@ -5,8 +5,6 @@ import { React } from "react";
 import { RestaurantGrid } from "./restPage.styled"
 
 // COMPONENTS IMPORTS
-import Navbar from '../../Componets/Layout/Header/navbar';
-import Footer from '../../Componets/Layout/Footer/footer';
 import RestaurantCard from "../../Componets/restaurant/restaurantCard";
 
 

@@ -71,8 +71,8 @@ function Navbar() {
           <span>Profile</span>
         </NavbarLogoPageTabsDiv>
         <NavbarSignUpButtonGroupsDiv>
-          <button>SIGNUP</button>
-          <button onClick={() => navigate("/access")}>LOGIN</button>
+          <button onClick={() => navigate("/registration")}>SIGNUP</button>
+          <button onClick={() => navigate("/login")}>LOGIN</button>
         </NavbarSignUpButtonGroupsDiv>
       </NavbarButtonsContDiv>
     </NavbarContDiv>

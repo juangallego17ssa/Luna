@@ -15,17 +15,19 @@ export const RestaurantNavBarWrapper = styled.div.attrs({
 })`
   height: fit-content;
   width: 100%;
+
 `;
 export const RestaurantBody = styled.div.attrs({
   className: "RestaurantBody",
 })`
-  display: flex;
-  flex-grow:1;
+  /* display: flex; */
+  position: relative;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   width: 100%;
-  height:100%;
+  flex-grow: 1;
+  
 `;
 
 export const RestaurantBannerImgDiv = styled.div.attrs({
@@ -36,12 +38,11 @@ export const RestaurantBannerImgDiv = styled.div.attrs({
   height: fit-content;
   z-index: -1;
 
+
   > img {
     height: 400px;
     width: 100%;
     object-fit: fill;
-    position: absolute;
-  }
 `;
 
 
@@ -50,10 +51,10 @@ export const RestaurantBannerTitleDiv = styled.div.attrs({
 })`
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height:160px;
+  height: 160px;
 `;
 
 export const RestaurantBannerOverlayWrapper = styled.div.attrs({
@@ -127,10 +128,58 @@ export const RestaurantBannerAddressMap = styled.div.attrs({
   height: 300px;
   width: 20rem;
   display: flex;
-  z-index: 20;
-  background: aqua;
+  flex-direction: column;
+  background: white;
   margin-top: 1.75rem;
   margin-right: 5rem;
+  border-radius: 3px;
+`;
+export const RestaurantBannerAddressMapImage = styled.img.attrs({
+  className: "RestaurantBannerAddressMapImage",
+})`
+  height: 150px;
+  width: 100%;
+  display: flex;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+`;
+
+export const RestaurantBannerAddressInfoWrapper = styled.div.attrs({
+  className: "RestaurantBannerAddressInfoWrapper",
+})`
+  height: 150px;
+  width: 100%;
+  display: flex;
+`;
+
+export const RestaurantBannerAddressSymbolsDiv = styled.div.attrs({
+  className: "RestaurantBannerAddressSymbolsDiv",
+})`
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const RestaurantBannerAddressSymbols = styled.img.attrs({
+  className: "RestaurantBannerAddressSymbols",
+})``;
+
+export const RestaurantBannerAddressTextDiv = styled.div.attrs({
+  className: "RestaurantBannerAddressTextDiv",
+})`
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+`;
+
+export const RestaurantBannerAddressText = styled.div.attrs({
+  className: "RestaurantBannerAddressText",
+})`
+  
 `;
 
 
