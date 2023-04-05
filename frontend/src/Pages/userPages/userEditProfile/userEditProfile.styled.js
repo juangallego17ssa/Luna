@@ -4,8 +4,8 @@ export const UserProfileDiv = styled.html.attrs({
   className: "UserProfileDiv",
 })`
   width: 90vw;
-  height: 100vh;
-  background: green;
+  height: 99vh;
+  background: white;
 `;
 
 export const UserProfileBody = styled.div.attrs({
@@ -17,6 +17,6 @@ export const UserProfileBody = styled.div.attrs({
   align-items: center;
   background: pink;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   //height:75vh;
 `;

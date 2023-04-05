@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProfileWrapper = styled.div`
   position: absolute;
-  left: 13vh;
+  left: 10vh;
   width: 15vw;
   height: 20vh;
   top: 15vh;
@@ -13,9 +13,9 @@ export const ProfileContainer = styled.div`
   position: absolute;
   left: 26.1vw;
   width: 40vw;
-  height: 60vh;
-  top: 22.9vh;
-  background-color: pink;
+  height: 65vh;
+  top: 21.9vh;
+  background-color: white;
   padding-left: 10px;
   z-index: 0;
   border: 1px solid #ebebeb;
