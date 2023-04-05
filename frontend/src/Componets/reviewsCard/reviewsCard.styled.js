@@ -5,8 +5,11 @@ export const ReviewMainDiv = styled.div.attrs({
 })`
   display: flex;
   flex-direction: column;
-  width:100%;
+  width: 100%;
   align-items: center;
+  background-color: white;
+  margin-top: 1rem;
+  border-radius: 3px
 `;
 
 export const ReviewHeadDiv = styled.div.attrs({
@@ -16,7 +19,8 @@ export const ReviewHeadDiv = styled.div.attrs({
   height: 4rem;
   width: 100%;
   margin-top: 1rem;
-  border-bottom: solid 2px lightgray;
+  border-bottom: solid 2px #ebebeb;
+  background-color: white;
 `;
 
 export const ReviewHeadProfilePic = styled.img.attrs({
@@ -56,7 +60,9 @@ export const ReviewHeadCreatedTime = styled.div.attrs({
 })`
   display: flex;
   justify-content: flex-end;
+  margin-right: 0.5rem;
   margin-top: 0.5rem;
+  font-size: 1rem;
   flex-grow: 1;
 `;
 
@@ -65,14 +71,12 @@ export const ReviewContentDiv = styled.div.attrs({
 })`
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: 0.5rem;
 
   > p {
     font-size: 1rem;
     font-weight: 300;
   }
-  
-  
 `;
 
 export const ReviewLikeCommentDiv = styled.div.attrs({
@@ -81,9 +85,9 @@ export const ReviewLikeCommentDiv = styled.div.attrs({
   display: flex;
   height: 3rem;
   width: 100%;
-  margin-top: 1rem;
   align-items: center;
   justify-content: space-between;
+  margin: 0 0.5rem;
 `;
 export const ReviewLikeCommentButtonsDiv = styled.div.attrs({
   className: "ReviewLikeCommentButtonsDiv",
@@ -92,18 +96,24 @@ export const ReviewLikeCommentButtonsDiv = styled.div.attrs({
   align-content: baseline;
   justify-content: center;
   column-gap: 0.1rem;
+  
+
+
   > * {
     background-color: rgba(145, 145,145,0.6);
     cursor: pointer;
     color: white;
     border: none;
-    height: 3rem;
+    height: 2.4rem;
     width: 10rem;
     font-size: 1.2rem;
+
+    
   }
   & button:first-child {
     border-top-left-radius: 1.563rem;
     border-bottom-left-radius: 1.563rem;
+    
   }
   & button:last-child {
     border-top-right-radius: 1.563rem;
@@ -114,5 +124,121 @@ export const ReviewViewAllCommentsDiv = styled.div.attrs({
   className: "ReviewViewAllCommentsDiv",
 })`
   display: flex;
-  color: #E47D31
+  color: #E47D31;
+  margin-right: 0.5rem;
+  
+  > span {
+    cursor: pointer;
+  }
+
 `;
+
+export const ReviewCommentMainDiv = styled.div.attrs({
+  className: "ReviewCommentMainDiv",
+})`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+`;
+
+export const ReviewCreateCommentDiv = styled.div.attrs({
+  className: "ReviewCreateCommentDiv",
+})`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+
+`;
+
+export const ReviewLikeCommentInput = styled.input.attrs({
+  className: "ReviewLikeCommentInput",
+})`
+  width: 60%;
+  line-height: 2.5rem;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  font-weight: 700;
+  text-indent: 1rem;
+`;
+
+export const ReviewCommentButton = styled.button.attrs({
+  className: "ReviewCommentButton",
+})`
+  padding: 0 3rem;
+  border-radius: 35px;
+  border: none;
+  background: #e47d31;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  margin-right: 6rem;
+  font-family: "Roboto", sans-serif;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const ReviewViewAllCommentsDivHide = styled.div.attrs({
+  className: "ReviewViewAllCommentsDivHide",
+})`
+  display: flex;
+  color: #e47d31;
+  align-items: center;
+  margin-right: 1rem;
+  
+
+  > span {
+    cursor: pointer;
+  }
+`;
+
+export const ReviewCommentGrid = styled.div.attrs({
+  className: "ReviewCommentGrid",
+})`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  width: 100%;
+  border-top: solid 2px #ebebeb;
+  
+`;
+
+export const ReviewCommentNameTimeDiv = styled.div.attrs({
+  className: "ReviewCommentNameTimeDiv",
+})`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  
+`;
+
+export const ReviewCommentName = styled.div.attrs({
+  className: "ReviewCommentName",
+})`
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  color: #E47D31;
+  margin: 0.5rem 0.5rem;
+`;
+
+export const ReviewCommentCreatedTime = styled.div.attrs({
+  className: "ReviewCommentCreatedTime",
+})`
+  display: flex;
+  font-size: 14px;
+  margin: 0.5rem 0.5rem;
+`;
+
+export const ReviewCommentDiv = styled.div.attrs({
+  className: "ReviewCommentDiv",
+})`
+  display: flex;
+  width: 100;
+  margin: 0.5rem 0.5rem;
+`;
+
