@@ -9,6 +9,7 @@ import UserProfile from "../../Pages/userPages/userProfile/userProfile";
 import RestaurantHome from '../../Pages/restaurant/restaurantHome'
 import RestaurantWriteReview from '../../Pages/restaurant/writeReview'
 import Restaurant from '../../Pages/restaurant/restaurant'
+import CreateRestaurant from '../../Pages/createRestaurant/createRestaurant'
 
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
         <Route path="" element={<RestaurantHome />} />
         <Route path="write_review" element={<RestaurantWriteReview />} />
       </Route>
+      <Route path={"/newRestaurant"} element={<CreateRestaurant />} />
     </Routes>
   );
 };

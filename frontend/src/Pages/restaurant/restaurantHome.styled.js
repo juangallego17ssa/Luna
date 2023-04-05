@@ -8,6 +8,7 @@ export const RestaurantHomeDiv = styled.div.attrs({
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* background: blue; */
     width: 100%;
     flex-grow:1;
   `;
@@ -18,9 +19,9 @@ export const RestaurantHomeDiv = styled.div.attrs({
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(0,0,0,0);
+    /* background: greenyellow; */
     width: 100%;
-    height:196px;
+    height:240px;
   `;
     
 
@@ -31,7 +32,9 @@ export const RestaurantHomeDetail = styled.div.attrs({
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* background: blue; */
     width: 100%;
     flex-grow:1;
+    
   `;
   
