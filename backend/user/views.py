@@ -14,6 +14,21 @@ from review.serializers import ReviewSerializer
 User = get_user_model()
 
 
+class MyUserRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsSameUser]
+
+    def get_object(self):
+        return self.request.user
+
+    # Use different serializers for get and patch methods
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return UserSerializer
+        elif self.request.method == 'PATCH':
+            return UserUpdateSerializer
+        return UserSerializer
+
+
 class RetrieveUpdateDeleteMyUserView(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsSameUser]
 

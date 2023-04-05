@@ -56,7 +56,6 @@ export const WriteReviewDiv = styled.div.attrs({
     placeholder: "Your review helps others learn about great local businesses.\n\nPlease don't review this business if you received a freebie for writing this review, or if you're connected in any way to the owner or employees.",
     required: true,
     autocomplete: "off",
-    wrap: true,
     resize: "none",
   
   })`
