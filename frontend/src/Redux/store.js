@@ -7,6 +7,6 @@ export default configureStore({
   reducer: {
     currentuser: currentUser,
     signupemail: signUpEmailAddress,
-    userProfile: userProfile,
+    userprofile: userProfile,
   },
 });

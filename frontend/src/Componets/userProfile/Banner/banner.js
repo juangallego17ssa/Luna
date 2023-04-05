@@ -41,7 +41,7 @@ export default function Banner() {
     object-fit: cover;
     background-repeat: no-repeat;
     max-width: 100%;
-    z-index: 0;
+    z-index: 5;
     filter: brightness(60%);
   `;
 
