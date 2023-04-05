@@ -9,7 +9,7 @@ export const ReviewMainDiv = styled.div.attrs({
   align-items: center;
   background-color: white;
   margin-top: 1rem;
-  border-radius: 3px
+  border-radius: 3px;
 `;
 
 export const ReviewHeadDiv = styled.div.attrs({
@@ -70,12 +70,14 @@ export const ReviewContentDiv = styled.div.attrs({
   className: "ReviewContentDiv",
 })`
   display: flex;
-  flex-direction: column;
-  margin: 0.5rem;
+  width: 98%;
+  justify-content: flex-start;
+  margin: 0.5rem ;
 
   > p {
     font-size: 1rem;
     font-weight: 300;
+
   }
 `;
 
@@ -93,8 +95,7 @@ export const ReviewLikeCommentButtonsDiv = styled.div.attrs({
   className: "ReviewLikeCommentButtonsDiv",
 })`
   display: flex;
-  align-content: baseline;
-  justify-content: center;
+  margin-left: 0.5rem;
   column-gap: 0.1rem;
   
 
@@ -104,9 +105,10 @@ export const ReviewLikeCommentButtonsDiv = styled.div.attrs({
     cursor: pointer;
     color: white;
     border: none;
-    height: 2.4rem;
+    height: 2.2rem;
     width: 10rem;
-    font-size: 1.2rem;
+    font-size: 1.2rem; 
+    justify-content
 
     
   }
@@ -194,51 +196,5 @@ export const ReviewViewAllCommentsDivHide = styled.div.attrs({
   > span {
     cursor: pointer;
   }
-`;
-
-export const ReviewCommentGrid = styled.div.attrs({
-  className: "ReviewCommentGrid",
-})`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: auto;
-  width: 100%;
-  border-top: solid 2px #ebebeb;
-  
-`;
-
-export const ReviewCommentNameTimeDiv = styled.div.attrs({
-  className: "ReviewCommentNameTimeDiv",
-})`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  
-`;
-
-export const ReviewCommentName = styled.div.attrs({
-  className: "ReviewCommentName",
-})`
-  display: flex;
-  font-size: 14px;
-  font-weight: 700;
-  color: #E47D31;
-  margin: 0.5rem 0.5rem;
-`;
-
-export const ReviewCommentCreatedTime = styled.div.attrs({
-  className: "ReviewCommentCreatedTime",
-})`
-  display: flex;
-  font-size: 14px;
-  margin: 0.5rem 0.5rem;
-`;
-
-export const ReviewCommentDiv = styled.div.attrs({
-  className: "ReviewCommentDiv",
-})`
-  display: flex;
-  width: 100;
-  margin: 0.5rem 0.5rem;
 `;
 

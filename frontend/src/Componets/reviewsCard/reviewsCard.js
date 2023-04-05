@@ -13,20 +13,17 @@ import {
   ReviewLikeCommentInput,
   ReviewCommentButton,
   ReviewViewAllCommentsDivHide,
-  ReviewCommentGrid,
-  ReviewCommentNameTimeDiv,
-  ReviewCommentName,
-  ReviewCommentCreatedTime,
-  ReviewCommentDiv,
   ReviewCommentMainDiv,
   ReviewCreateCommentDiv,
 } from "./reviewsCard.styled";
 import StarRating from "../StarsRating/starsRating.js";
 import ProfilePic from "../../Assets/images/user.png";
 import Like from "../../Assets/images/Like.png";
+import RestaurantComment from "../restaurantComment/restaurantComment";
 
-const Reviews = () => {
+const Reviews = (props) => {
   const [viewComments, SetViewComments] = useState(false);
+  console.log(props.reviews)
 
   const handleViewHideComments = (e) => {
     SetViewComments(!viewComments);
@@ -35,10 +32,14 @@ const Reviews = () => {
   return (
     <ReviewMainDiv>
       <ReviewHeadDiv>
-        <ReviewHeadProfilePic src={ProfilePic} />
+        {props.reviews.user.ProfilePic == null ? (
+          <ReviewHeadProfilePic src={ProfilePic} />
+        ) : (
+          <ReviewHeadProfilePic src={props.reviews.user.ProfilePic} />
+        )}
         <ReviewHeadNameReviewCount>
-          <h2>Laurent. H</h2>
-          <p>6 Reviews in total</p>
+          <h2>{props.reviews.user.first_name + ' ' + props.reviews.user.last_name}</h2>
+          <p>{props.countReviews} Reviews in total</p>
         </ReviewHeadNameReviewCount>
         <ReviewHeadStarsDiv>
           <StarRating />
@@ -47,14 +48,7 @@ const Reviews = () => {
       </ReviewHeadDiv>
       <ReviewContentDiv>
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum.
+          {props.reviews.text_content}
         </p>
       </ReviewContentDiv>
       {!viewComments ? (
@@ -79,32 +73,7 @@ const Reviews = () => {
               <span onClick={handleViewHideComments}>Hide</span>
             </ReviewViewAllCommentsDivHide>
           </ReviewCreateCommentDiv>
-          <ReviewCommentGrid>
-            <ReviewCommentNameTimeDiv>
-              <ReviewCommentName>Colin Wirz</ReviewCommentName>
-              <ReviewCommentCreatedTime>Time</ReviewCommentCreatedTime>
-            </ReviewCommentNameTimeDiv>
-            <ReviewCommentDiv>
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-              elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-              magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-              justo duo dolores et ea rebum.
-            </ReviewCommentDiv>
-          </ReviewCommentGrid>
-          <ReviewCommentGrid>
-            <ReviewCommentNameTimeDiv>
-              <ReviewCommentName>Colin Wirz</ReviewCommentName>
-              <ReviewCommentCreatedTime>Time</ReviewCommentCreatedTime>
-            </ReviewCommentNameTimeDiv>
-            <ReviewCommentDiv>
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-              elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-              magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-              justo duo dolores et ea rebum.
-            </ReviewCommentDiv>
-          </ReviewCommentGrid>
+          <RestaurantComment/>
         </ReviewCommentMainDiv>
       )}
     </ReviewMainDiv>

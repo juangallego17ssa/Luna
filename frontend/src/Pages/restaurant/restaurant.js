@@ -86,8 +86,6 @@ const Restaurant = () => {
 
     getRestaurantByID();
     getReviewsToThisRestaurant();
-
-
   }, []);
 
   
@@ -147,7 +145,7 @@ const Restaurant = () => {
             </RestaurantBannerAddressMap> : "" }
           </RestaurantBannerOverlayWrapper>
         </RestaurantBannerTitleDiv>
-        <Outlet context={[showMap, setShowMap, restaurantID]}></Outlet>
+        <Outlet context={[showMap, setShowMap, restaurantID]} restaurant={restaurantData} reviews={reviewData}></Outlet>
       </RestaurantBody>
       <Footer />
     </RestaurantDiv>
