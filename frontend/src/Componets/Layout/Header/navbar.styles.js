@@ -25,9 +25,7 @@ export const NavbarLogoPageTabsDiv = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  :hover {
-    font-weight: bold;
-  }
+  
 
   > span {
     display: inline-block;
@@ -38,16 +36,16 @@ export const NavbarLogoPageTabsDiv = styled.div`
 export const NavbarButtonsContDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  max-width: 90%;
-  min-width: 40%;
+  width: 70%;
   align-items: center;
-  align-items: center;
+  
 `;
 export const NavbarSignUpButtonGroupsDiv = styled.div`
   display: flex;
   align-content: baseline;
   justify-content: center;
   column-gap: 0.063rem;
+  margin-right: 2rem;
   > * {
     background-color: #e47d31;
     cursor: pointer;

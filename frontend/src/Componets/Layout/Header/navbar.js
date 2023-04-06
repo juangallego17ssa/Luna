@@ -31,8 +31,19 @@ function Navbar() {
   const navigate = useNavigate();
 
   const handleNavHome = () => navigate("/");
-  const handleNavSearch = () => navigate("/search");
+  const handleNavSearch = () => navigate("/search/restaurant");
   const handleNavProfile = () => navigate("/profile");
+
+  const handleLogout = () => {
+    
+    localStorage.removeItem("access-token");
+    console.log(
+      "I am from the Local Storage after logout" +
+        localStorage.getItem("access-token")
+    );
+    navigate("/");
+  };
+
 
   // Render
   return (
@@ -72,7 +83,11 @@ function Navbar() {
         </NavbarLogoPageTabsDiv>
         <NavbarSignUpButtonGroupsDiv>
           <button onClick={() => navigate("/registration")}>SIGNUP</button>
-          <button onClick={() => navigate("/login")}>LOGIN</button>
+          {!localStorage.getItem("access-token") ? (
+            <button onClick={() => navigate("/login")}>LOGIN</button>
+          ) : (
+            <button onClick={handleLogout}>LOGOUT</button>
+          )}
         </NavbarSignUpButtonGroupsDiv>
       </NavbarButtonsContDiv>
     </NavbarContDiv>
