@@ -16,11 +16,9 @@ export default function ProfileComments() {
 
   return (
     <>
-      <ReviewCreateCommentDiv>
-        {comments.map((comment) => {
-          return <RestaurantComment key={uuid()} comments={comment} />;
-        })}
-      </ReviewCreateCommentDiv>
+      {comments.map((comment) => {
+        return <RestaurantComment key={uuid()} comments={comment} />;
+      })}
     </>
   );
 }
