@@ -1,5 +1,5 @@
 // BASE IMPORTS
-import { React } from "react";
+import { React, useEffect } from "react";
 import { useState} from 'react';
 
 // STYLED IMPORTS
@@ -33,6 +33,7 @@ function SearchPage() {
     const handleSearch = (event) => {
         setSearchText(event.target.value)
     }
+
 
 
   return (

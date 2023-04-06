@@ -28,6 +28,7 @@ const Home = () => {
       <Route path={"/verification"} element={<VerificationPage />} />
       <Route path={"/search"} element={<SearchPage />} >
         <Route path={"restaurant"} element={<RestPage/>} />
+        <Route path={"restaurant/:searchText"} element={<RestPage/>} />
         <Route path={"review"} element={<ReviewPage/>} />
         <Route path={"user"} element={<RestPage/>} />
       </Route>
