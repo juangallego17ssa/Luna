@@ -15,6 +15,7 @@ import {
 import Navbar from "../../Componets/Layout/Header/navbar";
 import Footer from "../../Componets/Layout/Footer/footer";
 import RestPage from "./restPages/restPage";
+import { Outlet } from "react-router-dom";
 
 
 // import Reviews from "../../Componets/Reviews/Reviews"
@@ -25,6 +26,7 @@ import RestPage from "./restPages/restPage";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 function SearchPage() {
+  
 
 
 
@@ -43,7 +45,7 @@ function SearchPage() {
           <h3>USERS</h3>
         </SubNavigationDiv>
       </NavigationDiv>
-      <RestPage />
+      <Outlet></Outlet>
       <Footer />
     </EntirePageDiv>
   );

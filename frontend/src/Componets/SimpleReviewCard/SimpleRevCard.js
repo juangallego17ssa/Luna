@@ -1,9 +1,7 @@
 const SimpleRevCard = () => {
   return (
     <div>
-      <FooterContainer>
-     <FooterLinks></FooterLinks>
-      </FooterContainer>
+      Hello world
     </div>
   );
 };
