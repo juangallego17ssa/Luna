@@ -60,22 +60,17 @@ function Homepage() {
     const handleSearchClick = () => {
         navigate(`/search/restaurant/${searchText}`)
     }
-    
-    return (
-      <HomepageDiv>
-        <Navbar />
-        <HomepageBody>
-          <HomepageBannerContainerDiv>
-            <HomepageBannerSearchbarContainerDiv>
-              <HomepageBannerSearchbarInputField
-                onChange={handleSearchChange} type="text"
-                placeholder=" Search..."
-              />
-              <HomepageBannerSearchbarButton onClick={handleSearchClick}>
-                Search
-              </HomepageBannerSearchbarButton>
-            </HomepageBannerSearchbarContainerDiv>
-          </HomepageBannerContainerDiv>
+   
+    return (   
+        <HomepageDiv>
+            <Navbar/>
+            <HomepageBody>
+                <HomepageBannerContainerDiv>
+                    <HomepageBannerSearchbarContainerDiv>
+                        <HomepageBannerSearchbarInputField onChange={handleSearchChange} type="text" placeholder=" Search..."/>
+                        <HomepageBannerSearchbarButton onClick={handleSearchClick}>Search</HomepageBannerSearchbarButton>
+                    </HomepageBannerSearchbarContainerDiv>
+                </HomepageBannerContainerDiv>
 
           <h4> BEST RATED RESTAURANTS</h4>
           <HomepageHighligherLine />
