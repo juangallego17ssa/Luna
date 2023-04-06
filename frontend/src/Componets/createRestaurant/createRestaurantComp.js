@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { axiosWithToken, axiosWithoutToken } from "../../Axios/axios";
 import {
   AuthForm,
-  CompleteButton,
   FormContainer,
   FormTitle,
   InputCode,
@@ -20,6 +19,7 @@ import {
   AddImageInput,
 } from "./createRestaurantComp.styled";
 import { useSelector } from "react-redux";
+import { CompleteButton } from "../authComponents/verification.styled";
 
 function CreateRestaurantComp() {
   const registrationEmail = useSelector(
@@ -99,7 +99,12 @@ function CreateRestaurantComp() {
 
   //store selected image
   const handleImage = (e) => {
-    setImage(e.target.value);
+
+    const myNewImage = {
+        file: e.target.files[0],
+        url: URL.createObjectURL(e.target.files[0]),
+    }
+    setImage(myNewImage)
   };
 
   //validation
@@ -118,6 +123,21 @@ function CreateRestaurantComp() {
       return;
     }
 
+    // declare formData
+    const formData = new FormData();
+    formData.append("name", name)
+    formData.append("category", category)
+    formData.append("country", country)
+    formData.append("street", street)
+    formData.append("city", city)
+    formData.append("zip", zip)
+    formData.append("website", website)
+    formData.append("phone", phone)
+    formData.append("email", email)
+    formData.append("opening_hours", openingHours)
+    formData.append("price_level", priceLevel)
+    formData.append("images", image.file)
+
     // Prepare the request for login in and getting the token
     const myBody = JSON.stringify({
       "name": name,
@@ -132,9 +152,11 @@ function CreateRestaurantComp() {
       "opening_hours": openingHours,
       "price_level": priceLevel
     });
+
     const myConfig = {
         method: "post",
-        data: myBody,
+        // data: myBody,
+        data: formData,
     };
 
     // Fetch the data and save the token in the local storage
@@ -246,61 +268,16 @@ function CreateRestaurantComp() {
             <option value="4">$$$$</option>
           </InputSelect>
           <AddImageDiv>
-                <CompleteButton onclick={""} >CHOOSE A FILE...</CompleteButton>
-                <AddImageInput type="file" accept="image/*" onChange={handleImage}></AddImageInput>
+                <input type="file" accept="image/*" onChange={handleImage}></input>
           </AddImageDiv>
-          <InputSelect id="imageInput" onChange={handleCountry}/>
 
           { showRequired ? <RequiredField>This field is required</RequiredField> : <></>}
-          { showRequired ? <RequiredField>This field is required</RequiredField> : <></>}
-          { showRequired ? <RequiredField>This field is required</RequiredField> : <></>}
+          <div></div>
+          <div></div>
 
         
         </Basic>
         
-{/*         
-        <InputContainer>
-          <InputField
-            placeholder="Email"
-            type="email"
-            value={userEmail}
-            onChange={handleEmailInput}
-          />
-          <InputField
-            placeholder="Username"
-            value={userName}
-            onChange={handleUserNameInput}
-          />
-          <InputField
-            placeholder="First Name"
-            value={firstName}
-            onChange={handleFirstNameInput}
-          />
-          <InputField
-            placeholder="Last Name"
-            value={lastName}
-            onChange={handleLastNameInput}
-          />
-          <InputField
-            placeholder="Password"
-            type="password"
-            value={userPassword}
-            onChange={handlePasswordInput}
-          />
-          <InputField
-            placeholder="Repeat Password"
-            type="password"
-            value={repeatPassword}
-            onChange={handleRepeatPasswordInput}
-          />
-        </InputContainer>
-        <p
-          style={
-            passwordMatch ? { visibility: "hidden" } : { visibility: "visible" }
-          }
-        >
-          The passwords don't match
-        </p> */}
       </FormContainer>
       <CompleteButton onClick={handleCreateClick}>CREATE</CompleteButton>
     </AuthForm>
