@@ -82,7 +82,7 @@ function SearchPage() {
         <EntirePageDiv>
             <Navbar/>
             {/* <SearchBarInput onChange={(e) => setSearchField(e.target.value)}/> */}
-            <SearchBarInput onChange={handleSearch}/>
+            <SearchBarInput className="searchBarInput" onChange={handleSearch}/>
             <NavigationDiv>
                 <div>
                     <NavLink className={"NavLink"} to={"/search/restaurant"}>RESTAURANTS</NavLink>

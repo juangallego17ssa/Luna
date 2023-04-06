@@ -1,4 +1,4 @@
-import {React} from "react";
+import {React, useState} from "react";
 
 import {
     HomepageDiv,
@@ -14,8 +14,21 @@ import {
 import Navbar from "../../Componets/Layout/Header/navbar"
 
 import Footer from "../../Componets/Layout/Footer/footer"
+import { useNavigate } from "react-router-dom";
+
+
 
 function Homepage() {
+    
+    const [searchText, setSearchText] = useState()
+    const handleSearchChange = (event) => {
+        setSearchText(event.target.value);
+    }
+    
+    const navigate = useNavigate()
+    const handleSearchClick = () => {
+        navigate(`/search/restaurant/${searchText}`)
+    }
     
     return (   
         <HomepageDiv>
@@ -23,8 +36,8 @@ function Homepage() {
             <HomepageBody>
                 <HomepageBannerContainerDiv>
                     <HomepageBannerSearchbarContainerDiv>
-                        <HomepageBannerSearchbarInputField type="text" placeholder=" Search..."/>
-                        <HomepageBannerSearchbarButton>Search</HomepageBannerSearchbarButton>
+                        <HomepageBannerSearchbarInputField onChange={handleSearchChange} type="text" placeholder=" Search..."/>
+                        <HomepageBannerSearchbarButton onClick={handleSearchClick}>Search</HomepageBannerSearchbarButton>
                     </HomepageBannerSearchbarContainerDiv>
                 </HomepageBannerContainerDiv>
 
