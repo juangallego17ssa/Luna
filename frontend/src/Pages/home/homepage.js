@@ -15,7 +15,6 @@ import {
 import Navbar from "../../Componets/Layout/Header/navbar";
 import Footer from "../../Componets/Layout/Footer/footer";
 import { axiosWithToken } from "../../Axios/axios";
-import { useState } from "react";
 import { useEffect } from "react";
 import RestaurantCard from "../../Componets/restaurant/restaurantCard";
 import { v4 as uuid } from "uuid";
