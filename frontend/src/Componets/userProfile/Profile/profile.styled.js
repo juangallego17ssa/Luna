@@ -14,7 +14,7 @@ export const ProfileContainer = styled.div`
   left: 26.1vw;
   width: 40vw;
   height: 65vh;
-  top: 21.9vh;
+  top: 23vh;
   background-color: white;
   padding-left: 10px;
   z-index: 0;

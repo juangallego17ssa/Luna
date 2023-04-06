@@ -1,25 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AboutWrapper, AboutText } from "./about.styled.js";
+import { axiosWithToken, axiosWithoutToken } from "../../../Axios/axios";
 
 export default function About() {
-  const [banner, setBanner] = useState("");
-  const [firstName, setFirstName] = useState("Laurent");
-  const [lastName, setLasttName] = useState("Heron");
-  const [location, setLocation] = useState("Zurich, CH");
-  const [description, setDescription] = useState(
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  );
-  const [thingsIlove, setNumberComments] = useState(["baking", "coking"]);
-  const [joinedDate, setNumberReviews] = useState("April, 2018");
+  const [profile, setProfile] = useState({});
 
+  useEffect(() => {
+    axiosWithToken
+      .get("me/")
+      .then((response) => setProfile(response.data))
+      .catch((error) => console.log(error));
+  }, []);
+
+  if (profile.date_joined) {
+    const date = new Date(profile.date_joined);
+    const options = { year: "numeric", month: "long" };
+    console.log("EXAMPLE");
+    profile.date_joined = date.toLocaleString("en-US", options);
+  }
   return (
     <>
       <AboutText
-        firstName={firstName}
-        location={location}
-        joined_date={joinedDate}
-        things_i_love={thingsIlove}
-        description={description}
+        firstName={profile.first_name ? profile.first_name : ""}
+        location={profile.location ? profile.location : ""}
+        joined_date={profile.date_joined ? profile.date_joined : ""}
+        things_i_love={profile.things_i_love ? profile.things_i_love : ""}
+        description={profile.description ? profile.description : ""}
       />
     </>
   );

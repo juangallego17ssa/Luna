@@ -1,5 +1,7 @@
 import styled from "styled-components";
 //import img1 from "../../../Assets/images/b1.png";
+import React, { useState, useEffect } from "react";
+import { axiosWithToken, axiosWithoutToken } from "../../../Axios/axios";
 
 export const BannerElements = styled.div`
   position: relative;
@@ -58,25 +60,61 @@ export const BannerText = ({
   firstName,
   lastName,
   location,
-  numberReviews,
-  numberComments,
+  reviews,
+  comments,
 }) => {
-  const initial = lastName ? lastName.charAt(0) + "." : "";
-  const placeHolder = `${firstName} ${initial}`;
-  const placeHolderReview = `${numberReviews} reviews`;
-  const placeHolderComment = `${numberComments} comments`;
+  // const [profile, setProfile] = useState({});
+  // const [name, setName] = useState("");
+  // const [reviews, setReviews] = useState("");
+  // const [comments, setComments] = useState("");
+
+  // useEffect(() => {
+  //   axiosWithToken
+  //     .get("me/")
+  //     .then((response) => setProfile(response.data))
+  //     .catch((error) => console.log(error));
+
+  //   if (profile) {
+  //     setName(
+  //       `${profile.first_name} ${
+  //         profile.last_name ? profile.last_name.charAt(0) + "." : ""
+  //       }`
+  //     );
+  //   }
+
+  //   axiosWithToken
+  //     .get("reviews/comments/")
+  //     .then((response) =>
+  //       setComments(response.data ? response.data.length.toString() : "")
+  //     )
+  //     .catch((error) => console.log(error));
+
+  //   if (profile.id) {
+  //     axiosWithToken
+  //       .get(`reviews/user/${profile.id}/`)
+  //       .then((response) =>
+  //         setReviews(response.data ? response.data.length.toString() : "")
+  //       )
+  //       .catch((error) => console.log(error));
+  //     console.log("reviwes", reviews);
+  //     console.log(`reviews/user/${profile.id}/`);
+  //     console.log(reviews);
+  //   }
+  // }, []);
 
   return (
     <BannerTextWrapper>
-      <div className="name">{placeHolder}</div>
-      <div className="details">
-        <span>{location}</span>
+      <div className="name">
+        {firstName ? firstName : ""} {lastName ? lastName.charAt(0) + "." : ""}
       </div>
       <div className="details">
-        <span>{placeHolderReview}</span>
+        <span>{location ? location : ""}</span>
       </div>
       <div className="details">
-        <span>{placeHolderComment}</span>
+        <span>{`${reviews ? reviews.length.toString() : ""} reviews`}</span>
+      </div>
+      <div className="details">
+        <span>{`${comments} comments`}</span>
       </div>
     </BannerTextWrapper>
   );

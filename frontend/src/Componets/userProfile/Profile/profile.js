@@ -5,7 +5,7 @@ import {
   ProfileContainer,
 } from "./profile.styled";
 import styled from "styled-components";
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import EditIcon from "../../../Assets/svg/edit.svg";
 import RestaurantIcon from "../../../Assets/svg/restaurant.svg";
@@ -23,6 +23,7 @@ import {
   setProfileUser,
   getProfileUser,
 } from "../../../Redux/Slices/userProfile";
+import { axiosWithToken, axiosWithoutToken } from "../../../Axios/axios";
 
 export default function Profile() {
   useEffect(() => {
@@ -52,7 +53,7 @@ export default function Profile() {
   function handleProfile(newUserProfile) {
     console.log(newUserProfile);
     console.log("Call new user PROFILE");
-    dispatch(setProfileUser(newUserProfile));
+    setProfileUser(newUserProfile);
   }
 
   const handleBackgroundChange = (event) => {
