@@ -43,4 +43,3 @@ export const SearchBarInput= styled.input`
   row-gap: 1.25rem;
   justify-content: center;
 `;
-
