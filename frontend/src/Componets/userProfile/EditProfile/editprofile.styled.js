@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const RequiredField = styled.span.attrs({
+  className: "RequiredField",
+})`
+  color: rgba(176, 0, 0, 1);
+`;
+
 export const EditUserProfileWrapper = styled.div`
   position: absolute;
   left: 0vh;
@@ -11,12 +17,12 @@ export const EditUserProfileWrapper = styled.div`
   background-color: white;
 
   h1.title {
-    margin-top: 5px;
+    margin-top: 3px;
     margin-bottom: 0px;
     font-family: "RobotoBold";
     font-style: normal;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 23px;
     text-transform: uppercase;
     padding-left: 10px;
@@ -28,7 +34,7 @@ export const EditUserProfileWrapper = styled.div`
     font-family: "RobotoBold";
     font-style: normal;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     line-height: 23px;
 
     color: #979797;
@@ -90,19 +96,18 @@ export const SubmitButton = styled.button`
 export const DescriptionContent = styled.textarea.attrs({
   className: "WriteReviewContent",
   type: "textarea",
-  placeholder:
-    "Your review helps others learn about great local businesses.\n\nPlease don't review this business if you received a freebie for writing this review, or if you're connected in any way to the owner or employees.",
+  placeholder: "Add description here.",
   required: true,
   autocomplete: "off",
   resize: "none",
 })`
   width: 100%;
-  height: 9.5vh;
+  height: 3.5vh;
   margin-top: 0.2rem;
   background: #ffffff;
   border: 1px solid #e3e3e3;
   border-radius: 1px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   padding: 1% 1%;
   resize: none;
   font-family: "Roboto";
