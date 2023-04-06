@@ -38,11 +38,11 @@ export const RestaurantBannerImgDiv = styled.div.attrs({
   height: fit-content;
   z-index: -1;
 
-
   > img {
     height: 400px;
     width: 100%;
     object-fit: fill;
+  }
 `;
 
 
