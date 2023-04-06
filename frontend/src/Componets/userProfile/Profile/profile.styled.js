@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const ProfileWrapper = styled.div`
   position: absolute;
   left: 10vh;
-  width: 15vw;
-  height: 20vh;
+  width: 16vw;
+  height: 25vh;
   top: 15vh;
   background-color: blue;
   margin: 10px;
@@ -26,6 +26,7 @@ export const ProfileButtonWrapper = styled.div`
   width: 100%;
   height: 80%;
   top: 30vh;
+  margin-top:50px;
   background-color: white;
   max-width: 100%;
   display: flex;
