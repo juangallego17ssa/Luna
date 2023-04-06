@@ -1,15 +1,15 @@
 // BASE IMPORTS
 import { React } from "react";
+import {useEffect, useState} from 'react';
 
 // STYLED IMPORTS
 import {
-  EntirePageDiv,
-  SubNavigationDiv,
-  NavigationDiv,
-  SearchPageContentDiv,
-  SearchBarInput,
-  RestaurantGrid,
-} from "./searchPage.styled";
+    EntirePageDiv,
+    SubNavigationDiv,
+    NavigationDiv,
+    SearchPageContentDiv,
+    SearchBarInput
+} from './searchPage.styled';
 
 // COMPONENTS IMPORTS
 import Navbar from "../../Componets/Layout/Header/navbar";
@@ -27,7 +27,6 @@ import { Outlet } from "react-router-dom";
 // eslint-disable-next-line react-hooks/rules-of-hooks
 function SearchPage() {
   
-
 
 
   return (
