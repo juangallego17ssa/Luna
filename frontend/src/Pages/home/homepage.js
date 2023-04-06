@@ -1,4 +1,4 @@
-import {React} from "react";
+import {React, useState} from "react";
 
 import {
     HomepageDiv,
@@ -19,6 +19,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import RestaurantCard from "../../Componets/restaurant/restaurantCard";
 import { v4 as uuid } from "uuid";
+import { useNavigate } from "react-router-dom";
+
+
 
 function Homepage() {
     
@@ -49,6 +52,16 @@ function Homepage() {
 
 
     
+    const [searchText, setSearchText] = useState()
+    const handleSearchChange = (event) => {
+        setSearchText(event.target.value);
+    }
+    
+    const navigate = useNavigate()
+    const handleSearchClick = () => {
+        navigate(`/search/restaurant/${searchText}`)
+    }
+    
     return (
       <HomepageDiv>
         <Navbar />
@@ -56,10 +69,10 @@ function Homepage() {
           <HomepageBannerContainerDiv>
             <HomepageBannerSearchbarContainerDiv>
               <HomepageBannerSearchbarInputField
-                type="text"
+                onChange={handleSearchChange} type="text"
                 placeholder=" Search..."
               />
-              <HomepageBannerSearchbarButton>
+              <HomepageBannerSearchbarButton onClick={handleSearchClick}>
                 Search
               </HomepageBannerSearchbarButton>
             </HomepageBannerSearchbarContainerDiv>

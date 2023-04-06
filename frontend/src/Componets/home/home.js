@@ -17,6 +17,7 @@ import ProfileEdit from "../../Pages/userPages/userEditProfile/userEditProfile";
 import ProfileReviews from "../../Pages/userPages/userReview/userReview";
 import RestPage from "../../Pages/searchPages/restPages/restPage";
 import ReviewPage from "../../Pages/searchPages/reviewPages/reviewPage";
+import { WriteReviewContent } from "../../Pages/restaurant/writeReview.styled";
 import UserPage from "../../Pages/searchPages/userPages/userPages";
 
 const Home = () => {

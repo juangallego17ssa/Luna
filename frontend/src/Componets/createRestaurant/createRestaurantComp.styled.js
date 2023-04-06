@@ -74,9 +74,9 @@ export const InputText = styled.input.attrs({
 })`
   border: 1px solid #ebebeb;
   border-radius: 3px;
-  width: 50%;
+  width: 100%;
   text-indent: 1rem;
-  height: 50%;
+  height: 100%;
   
 
   font-style: normal;
@@ -136,54 +136,6 @@ export const AddImageDiv = styled.div`
   align-items:center;
   width: 70%;
 `
-export const AddImageInput = styled.input`
-  display:none;
-`
 
 
 
-
-
-
-
-
-
-
-
-export const InputContainer = styled.div`
-  display: grid;
-  grid-gap: 5px;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: repeat(2, 45%);
-  width: 35%;
-`;
-
-
-
-export const CompleteButton = styled.button`
-  padding: 0.9rem 4rem;
-  border-radius: 35px;
-  border: none;
-  background: #e47d31;
-  color: white;
-  font-size: 1.2rem;
-  line-height: 1.2rem;
-  font-family: "Roboto", sans-serif;
-  letter-spacing: 1px;
-  margin-top: 3%;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-export const ProgressCirclesContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 8%;
-`;
-export const ErrorMessage = styled.div`
-  color: red;
-  font-size: 14px;
-  margin-bottom: 10px;
-`;

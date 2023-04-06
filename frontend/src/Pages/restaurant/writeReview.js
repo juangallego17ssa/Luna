@@ -13,14 +13,17 @@ import {
   RequiredField,
 } from "./writeReview.styled";
 import { axiosWithToken } from "../../Axios/axios";
+import RatingStars from "../../Componets/ratingStars/ratingStars";
 
 const RestaurantWriteReview = () => {
   //// controlled form
   // rating input
-  const [rating, setRating] = useState();
-  const handleRatingChange = (event) => {
-    setRating(event.target.value);
-  };
+  const [rating, setRating] = useState(0);
+  function handleRatingChange(newRating) {
+    setRating(newRating)
+    console.log(rating)
+  }
+
   // review input
   const [review, setReview] = useState("");
   const handleReviewChange = (event) => {
@@ -47,7 +50,7 @@ const RestaurantWriteReview = () => {
     // Prepare the request for login in and getting the token
     const myBody = JSON.stringify({
       text_content: review,
-      rating: 5,
+      rating: rating,
     });
     const myConfig = {
       method: "post",
@@ -74,7 +77,11 @@ const RestaurantWriteReview = () => {
       <WriteReviewForm onSubmit={(event) => event.preventDefault()}>
         <WriteReviewRating>
           <WriteReviewStars>
-            <StarRating onChange={handleRatingChange}></StarRating>
+            <RatingStars
+              value={rating}
+              readOnly={false}
+              onChange={handleRatingChange}
+            />
           </WriteReviewStars>
           <WriteReviewStarsLabel>Select your rating</WriteReviewStarsLabel>
         </WriteReviewRating>
