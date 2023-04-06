@@ -1,5 +1,117 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const SimpleRevCard = styled.form`
+export const CardWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  background: white;
+  height: 410px;
+  width: 100%;
+  border: solid 2px rgb(235, 235,	235);
+  `;
+
+export const CardLine = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #E47D31;
+  height: 0.5rem;
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  
+`;
+
+export const UserInfos = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 20%;
+    border-bottom: solid 2px rgb(235, 235, 235);
+`;
+
+export const UserName = styled.h4`
+  font-size: 1.25rem;
+  margin: 0.5rem 0 0.25rem 0;
+  font-weight: 400;
+  color: #E47D31;
+`;
+
+export const Address = styled.p`
+  font-size: 1.125rem;
+  margin: 0.25rem 0;
+  font-weight: 400;
+`;
+
+export const UserImage = styled.img`
+  width: 100px;
+  height: 100%;
+`;
+
+export const InfoCont = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 100%;
+    height: 100%;
+    
+    /* border: 1px solid black; */
+`;
+
+export const ContentDiv = styled.div`
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 78%;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 10px 10px 10px 10px;
+  > h3 {
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+  }
+
+`;
+
+export const RestName = styled.div`
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #E47D31;
+            margin: 0px 0 10px 0;
+`;
+
+export const RevText = styled.div`
+  color: #4C4C4C; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+`;
+
+export const ReadMoreBtn = styled.div`
+    color: #E47D31;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    float: right;
+    margin: 0px 0 10px 0;
+`;
+
+export const ButtonGrey = styled.div`
+
+`;
+
+export const CommentsOwner = styled.div`
+  > .black{
+    font-size: 15px;
+    margin: 5px 0 5px 0;
+  }
+
+  > .orange{
+    font-size: 15px;
+    margin: 5px 0 5px 0;
+    color: #E47D31;
+  }
+
 `;

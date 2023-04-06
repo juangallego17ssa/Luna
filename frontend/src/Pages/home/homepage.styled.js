@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-// import background image
-// import img from "../../Assets/svg/profilePic"
-// background-image: url(${img});
+import HomeImage from "../../Assets/images/homepage_banner_img.jpg"
+
 export const HomepageDiv = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -22,7 +21,8 @@ export const HomepageBannerContainerDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  background-image: url(${HomeImage});
+  background-size: cover;
   height: 300px;
   width: 100%;
 
