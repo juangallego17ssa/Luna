@@ -12,7 +12,7 @@ export const AboutWrapper = styled.div`
     font-family: "RobotoBold";
     font-style: normal;
     font-weight: 1000;
-    font-size: 1.0rem;
+    font-size: 1rem;
     line-height: 100%;
     text-transform: uppercase;
     letter-spacing: 0rem;
@@ -39,37 +39,6 @@ export const AboutWrapper = styled.div`
     background: #f2f2f2;
   }
 `;
-
-// export const AboutTextWrapper = styled.div`
-//   position: absolute;
-//   left: 28.5vh;
-//   width: 20%;
-//   height: 50%;
-//   top: 48%;
-//   background-color: transparent;
-//   padding-left: 6rem;
-
-//   div.title {
-//     font-family: "Roboto";
-//     font-size: 1.1rem;
-//     font-weight: 700;
-//     letter-spacing: 0rem;
-//     text-align: left;
-//     margin-bottom: 0rem;
-//     line-height: 100%;
-//     color: #ffffff;
-//     margin-bottom: 1rem;
-//   }
-//   div.details {
-//     font-family: "Roboto";
-//     font-size: 0.8rem;
-//     font-weight: 300;
-//     text-align: left;
-//     margin-bottom: 0.5rem;
-//     line-height: 50%;
-//     color: #ffffff;
-//   }
-// `;
 
 export const AboutText = ({
   firstName,

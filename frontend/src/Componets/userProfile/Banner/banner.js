@@ -7,16 +7,21 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import React, { useState, useEffect } from "react";
+import { axiosWithoutToken, axiosWithToken } from "../../../Axios/axios";
 
 export default function Banner() {
   const dispatch = useDispatch();
   const [banner, setBanner] = useState("");
-  const [firstName, setFirstName] = useState("Laurent");
-  const [lastName, setLasttName] = useState("Heron");
-  const [location, setLocation] = useState("Zurich, CH");
-  const [numberComments, setNumberComments] = useState(2);
-  const [numberReviews, setNumberReviews] = useState(3);
+  const [profile, setProfile] = useState({});
+  const [reviews, setReviews] = useState([]);
+  const [comments, setComments] = useState([]);
 
+  useEffect(() => {
+    axiosWithToken
+      .get("me/")
+      .then((response) => setProfile(response.data))
+      .catch((error) => console.log(error));
+  }, []);
   const hiddenFileInput = React.useRef(null);
 
   const handleClick = (event) => {
@@ -58,11 +63,11 @@ export default function Banner() {
         style={{ display: "none" }}
       />
       <BannerText
-        firstName={firstName}
-        lastName={lastName}
-        location={location}
-        numberComments={numberComments}
-        numberReviews={numberReviews}
+        firstName={profile ? profile.first_name : ""}
+        lastName={profile ? profile.last_name : ""}
+        location={profile ? profile.location : ""}
+        reviews={reviews.length.toString()}
+        comments={comments.length.toString()}
       ></BannerText>
     </BannerElements>
   );
