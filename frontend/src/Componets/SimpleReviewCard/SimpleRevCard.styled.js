@@ -3,12 +3,13 @@ import styled from 'styled-components';
 export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   border-radius: 3px;
   background: white;
   height: 410px;
   width: 100%;
-  border: solid 2px rgb(235, 235,	235);
-  `;
+  border: solid 2px rgb(235, 235, 235);
+`;
 
 export const CardLine = styled.div`
   display: flex;
@@ -63,11 +64,12 @@ export const ContentDiv = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 78%;
+  /* height: 78%; */
   color: #000000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  box-sizing: border-box;
   > h3 {
     font-size: 20px;
     margin: 10px 0 10px 0;

@@ -26,56 +26,13 @@ import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 function SearchPage() {
+  const navigate = useNavigate();
 
     const [searchText, setSearchText] = useState("")
 
     const handleSearch = (event) => {
         setSearchText(event.target.value)
     }
-
-    // const fetchContent = async () =>{
-    //     let url="https://lunateam3.propulsion-learn.ch/backend/api/restaurants"
-    //     if (currentComponent==="REST"){
-    //         url="https://lunateam3.propulsion-learn.ch/backend/api/users/?search="+searchField+"&type=restaurants"
-    //     }else if(currentComponent==="REVI"){
-    //         url="https://lunateam3.propulsion-learn.ch/backend/api/users/?search="+searchField+"&type=reviews"
-    //     }else{
-    //         url="https://lunateam3.propulsion-learn.ch/backend/api/users/?search="+searchField+"&type=users"
-    //     }
-    //     console.log("current url is "+ url)
-    //     return fetch(url, axiosWithToken("GET"))
-    //         .then(response=>{
-    //             return response.json()
-    //         })
-    //         .then(data=>{
-    //             console.log(data)
-    //             if (data){
-    //                 setCurrentContent(data)
-    //             }
-    //         })
-    // }
-
-    //     useEffect(()=>{
-    //     console.log("passContentToContainer")
-    //     if (currentContent){
-    //         if (currentComponent==="REST"){
-    //             return currentContent.map(content=><RestaurantCard res={content}></RestaurantCard>)
-    //         }else if(currentComponent==="REVI"){
-    //             return currentContent.map(content=><SimpleRevCard review={content}></SimpleRevCard>)
-    //         }else if (currentComponent==="USER"){
-    //             return currentContent.map(content=><SimpleUserCard user_or_review={content}></SimpleUserCard>)
-    //         }else if (currentComponent==="CREA"){
-    //             return currentContent.map(content=><CreateReview user_or_review={content}></CreateReview>)
-    //         }
-    //     }
-    // })
-
-    // useEffect(()=>{
-    //     console.log("search page: about to run fetch content again")
-    //     fetchContent()
-
-    // },[currentComponent])
-
 
 
   return (
