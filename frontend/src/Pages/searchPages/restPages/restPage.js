@@ -14,9 +14,14 @@ import { useOutletContext, useParams } from "react-router-dom";
 // eslint-disable-next-line react-hooks/rules-of-hooks
 function RestPage() {
 
-  
+
+  const params = useParams()
+  const mySearch = params.searchText ? params.searchText : ""
   const [searchText, setSearchText] = useOutletContext();
 
+  useEffect(() => {
+    setSearchText(mySearch)
+  }, []);
 
   const [restaurantData, setRestaurantData] = useState([]);
 

@@ -29,7 +29,7 @@ function Homepage() {
     const handleSearchClick = () => {
         navigate(`/search/restaurant/${searchText}`)
     }
-    
+   
     return (   
         <HomepageDiv>
             <Navbar/>
