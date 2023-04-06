@@ -17,6 +17,7 @@ import ProfileEdit from "../../Pages/userPages/userEditProfile/userEditProfile";
 import ProfileReviews from "../../Pages/userPages/userReview/userReview";
 import RestPage from "../../Pages/searchPages/restPages/restPage";
 import ReviewPage from "../../Pages/searchPages/reviewPages/reviewPage";
+import UserPage from "../../Pages/searchPages/userPages/userPages";
 
 const Home = () => {
   return (
@@ -28,7 +29,7 @@ const Home = () => {
       <Route path={"/search"} element={<SearchPage />} >
         <Route path={"restaurant"} element={<RestPage />} />
         <Route path={"review"} element={<ReviewPage />} />
-        {/* <Route path={"user"} element={<SearchPage />} /> */}
+        <Route path={"user"} element={<UserPage />} />
       </Route>
       <Route path={"/profile/"} element={<UserProfile />}></Route>
       <Route path="/restaurant/:id" element={<Restaurant />}>

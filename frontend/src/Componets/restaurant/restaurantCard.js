@@ -20,26 +20,6 @@ const RestaurantCard = (props) => {
   };
 
 
-  // function handleRatingChange(newRating) {
-  //   // Make a PATCH request to the server to update the rating in the database
-  //   fetch("/api/restaurants/1234/rating", {
-  //     method: "PATCH",
-  //     body: JSON.stringify({ rating: newRating }),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       // Update the rating state in the parent component
-  //       setRating(data.rating);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error updating rating:", error);
-  //     });
-  //   console.log(newRating)
-  // }
-
 
   return (
     <CardWrapper>
