@@ -36,6 +36,8 @@ const RestaurantHome = () => {
     '1': '$',
     '2': '$$',
     '3': '$$$',
+    '4': '$$$$',
+    
   }
 
   const priceLevel = priceLevelHelper[restaurantData.price_level]

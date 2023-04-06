@@ -23,13 +23,13 @@ import {
 import Navbar from "../../Componets/Layout/Header/navbar";
 import Footer from "../../Componets/Layout/Footer/footer";
 import { Outlet, useParams } from "react-router-dom";
-import StarRating from "../../Componets/StarsRating/starsRating";
 import banner from "../../Assets/images/laederach_banner.png"; 
 import map from '../../Assets/images/map.png'
 import pin from "../../Assets/svg/pin.svg";
 import phone from "../../Assets/svg/phone.svg";
 import web from "../../Assets/svg/web.svg";
 import { axiosWithToken } from "../../Axios/axios";
+import RatingStars from "../../Componets/ratingStars/ratingStars";
 
 
 
@@ -88,6 +88,8 @@ const Restaurant = () => {
     getReviewsToThisRestaurant();
   }, []);
 
+  // console.log(restaurantData)
+
   
   const [showMap, setShowMap] = useState(true)
 
@@ -112,40 +114,51 @@ const Restaurant = () => {
                 <h3>{restCategory}</h3>
               </RestaurantBannerInformationRestCategory>
               <RestaurantBannerInformationRestRatingReviews>
-                <StarRating />
+                <RatingStars
+                  value={restaurantData.rating_average}
+                  readOnly={true}
+                />
                 <RestaurantBannerInformationRestReview>
                   {reviewData.length} reviews
                 </RestaurantBannerInformationRestReview>
               </RestaurantBannerInformationRestRatingReviews>
             </RestaurantBannerInformation>
 
-            {showMap ? <RestaurantBannerAddressMap>
-              <RestaurantBannerAddressMapImage
-                src={map}
-                alt="restaurant location map"
-              />
-              <RestaurantBannerAddressInfoWrapper>
-                <RestaurantBannerAddressSymbolsDiv>
-                  <RestaurantBannerAddressSymbols src={pin} />
-                  <RestaurantBannerAddressSymbols src={phone} />
-                  <RestaurantBannerAddressSymbols src={web} />
-                </RestaurantBannerAddressSymbolsDiv>
-                <RestaurantBannerAddressTextDiv>
-                  <RestaurantBannerAddressText>
-                    {restaurantData.street}
-                  </RestaurantBannerAddressText>
-                  <RestaurantBannerAddressText>
-                    {restaurantData.phone}
-                  </RestaurantBannerAddressText>
-                  <RestaurantBannerAddressText>
-                    {restaurantData.website}
-                  </RestaurantBannerAddressText>
-                </RestaurantBannerAddressTextDiv>
-              </RestaurantBannerAddressInfoWrapper>
-            </RestaurantBannerAddressMap> : "" }
+            {showMap ? (
+              <RestaurantBannerAddressMap>
+                <RestaurantBannerAddressMapImage
+                  src={map}
+                  alt="restaurant location map"
+                />
+                <RestaurantBannerAddressInfoWrapper>
+                  <RestaurantBannerAddressSymbolsDiv>
+                    <RestaurantBannerAddressSymbols src={pin} />
+                    <RestaurantBannerAddressSymbols src={phone} />
+                    <RestaurantBannerAddressSymbols src={web} />
+                  </RestaurantBannerAddressSymbolsDiv>
+                  <RestaurantBannerAddressTextDiv>
+                    <RestaurantBannerAddressText>
+                      {restaurantData.street}
+                    </RestaurantBannerAddressText>
+                    <RestaurantBannerAddressText>
+                      {restaurantData.phone}
+                    </RestaurantBannerAddressText>
+                    <RestaurantBannerAddressText>
+                      {restaurantData.website}
+                    </RestaurantBannerAddressText>
+                  </RestaurantBannerAddressTextDiv>
+                </RestaurantBannerAddressInfoWrapper>
+              </RestaurantBannerAddressMap>
+            ) : (
+              ""
+            )}
           </RestaurantBannerOverlayWrapper>
         </RestaurantBannerTitleDiv>
-        <Outlet context={[showMap, setShowMap, restaurantID]} restaurant={restaurantData} reviews={reviewData}></Outlet>
+        <Outlet
+          context={[showMap, setShowMap, restaurantID]}
+          restaurant={restaurantData}
+          reviews={reviewData}
+        ></Outlet>
       </RestaurantBody>
       <Footer />
     </RestaurantDiv>

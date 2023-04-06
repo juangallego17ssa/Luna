@@ -9,6 +9,7 @@ export const CardWrapper = styled.div`
   height: 410px;
   width: 100%;
   border: solid 1px #EBEBEB;
+  
 `;
 
 export const CardLine = styled.div`
@@ -31,6 +32,7 @@ export const RestaurantName = styled.div`
   font-size: 1.25rem;
   margin: 0.5rem 0 0.25rem 0;
   font-weight: 400;
+  cursor: pointer;
 `;
 
 export const Address = styled.div`

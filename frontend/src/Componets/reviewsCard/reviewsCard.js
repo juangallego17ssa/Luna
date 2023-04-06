@@ -17,18 +17,19 @@ import {
   ReviewCommentMainDiv,
   ReviewCreateCommentDiv,
 } from "./reviewsCard.styled";
-import StarRating from "../StarsRating/starsRating.js";
 import ProfilePic from "../../Assets/images/user.png";
 import Like from "../../Assets/images/Like.png";
 import RestaurantComment from "../restaurantComment/restaurantComment";
 import ReactTimeAgo from "react-time-ago";
 import { axiosWithToken } from "../../Axios/axios";
+import RatingStars from "../ratingStars/ratingStars";
 
 const Reviews = (props) => {
   const [viewComments, SetViewComments] = useState(false);
   const [commentData, setCommentData] = useState([]);
   const [commentInput, setCommentInput] = useState('');
   const reviewID = props.reviews.id;
+  // console.log(props)
 
   const handleViewHideComments = (e) => {
     SetViewComments(!viewComments);
@@ -105,7 +106,10 @@ const Reviews = (props) => {
           <p>{props.countReviews} Reviews in total</p>
         </ReviewHeadNameReviewCount>
         <ReviewHeadStarsDiv>
-          <StarRating />
+          <RatingStars
+            value={props.reviews.rating}
+            readOnly={true}
+          />
         </ReviewHeadStarsDiv>
         <ReviewHeadCreatedTime>
           <ReactTimeAgo
