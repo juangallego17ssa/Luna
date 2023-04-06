@@ -20,7 +20,7 @@ function ReviewPage() {
 
   const getAllReviews = async () => {
     try {
-      const response = await axiosWithToken.get(`/reviews/restaurant/1/`);
+      const response = await axiosWithToken.get(`reviews/restaurant/1/`);
       setReviewData(response.data);
     } catch (error) {
       console.log(error);

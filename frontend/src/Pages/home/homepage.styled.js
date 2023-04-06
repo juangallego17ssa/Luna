@@ -37,7 +37,7 @@ export const HomepageBannerContainerDiv = styled.div`
     width: 100%;
     height: 100%;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.1;
   }
   > * {
     z-index: 100;
@@ -83,7 +83,6 @@ export const RestaurantCardsContainerDiv = styled.div`
   column-gap: 20px;
   row-gap: 20px;
 `;
-
 export const RestaurantGrid = styled.div`
   display: grid;
   align-self: center;
@@ -96,5 +95,4 @@ export const RestaurantGrid = styled.div`
   justify-items: center;
   margin: 1rem 0;
   flex-grow: 1;
-  
 `;

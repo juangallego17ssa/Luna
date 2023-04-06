@@ -36,7 +36,7 @@ export const NavbarLogoPageTabsDiv = styled.div`
 export const NavbarButtonsContDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 35rem;
   align-items: center;
   
 `;
