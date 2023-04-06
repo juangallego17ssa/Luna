@@ -136,7 +136,7 @@ function CreateRestaurantComp() {
     formData.append("email", email)
     formData.append("opening_hours", openingHours)
     formData.append("price_level", priceLevel)
-    formData.append("images", image.file)
+    // formData.append("images", image.file)
 
     // Prepare the request for login in and getting the token
     const myBody = JSON.stringify({
