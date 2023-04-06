@@ -14,8 +14,7 @@ import {
 // COMPONENTS IMPORTS
 import Navbar from "../../Componets/Layout/Header/navbar";
 import Footer from "../../Componets/Layout/Footer/footer";
-import RestPage from "./restPages/restPage";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 
 // import Reviews from "../../Componets/Reviews/Reviews"
@@ -26,8 +25,17 @@ import { Outlet } from "react-router-dom";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 function SearchPage() {
-  
+  const navigate = useNavigate();
 
+  const handleRestaurant = () => {
+    navigate('/search/restaurant/')
+  }
+  const handleReview = () => {
+    navigate("/search/review/");
+  }
+  const handleUser = () => {
+    navigate("/search/user/");
+  }
 
   return (
     <EntirePageDiv>
@@ -35,13 +43,13 @@ function SearchPage() {
       <SearchBarInput />
       <NavigationDiv>
         <SubNavigationDiv>
-          <h3>RESTAURANTS</h3>
+          <h3 onClick={handleRestaurant}>RESTAURANTS</h3>
         </SubNavigationDiv>
         <SubNavigationDiv>
-          <h3>REVIEWS</h3>
+          <h3 onClick={handleReview}>REVIEWS</h3>
         </SubNavigationDiv>
         <SubNavigationDiv>
-          <h3>USERS</h3>
+          <h3 onClick={handleUser}>USERS</h3>
         </SubNavigationDiv>
       </NavigationDiv>
       <Outlet></Outlet>

@@ -16,7 +16,7 @@ import ProfileCommentss from "../../Pages/userPages/userComment/userComment";
 import ProfileEdit from "../../Pages/userPages/userEditProfile/userEditProfile";
 import ProfileReviews from "../../Pages/userPages/userReview/userReview";
 import RestPage from "../../Pages/searchPages/restPages/restPage";
-import SimpleRevCard from "../SimpleReviewCard/SimpleRevCard";
+import ReviewPage from "../../Pages/searchPages/reviewPages/reviewPage";
 
 const Home = () => {
   return (
@@ -27,8 +27,8 @@ const Home = () => {
       <Route path={"/verification"} element={<VerificationPage />} />
       <Route path={"/search"} element={<SearchPage />} >
         <Route path={"restaurant"} element={<RestPage />} />
-        <Route path={"review"} element={<SimpleRevCard />} />
-        {/* <Route path={"users"} element={<SearchPage />} /> */}
+        <Route path={"review"} element={<ReviewPage />} />
+        {/* <Route path={"user"} element={<SearchPage />} /> */}
       </Route>
       <Route path={"/profile/"} element={<UserProfile />}></Route>
       <Route path="/restaurant/:id" element={<Restaurant />}>
