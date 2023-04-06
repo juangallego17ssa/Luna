@@ -8,10 +8,15 @@ import { RestaurantGrid } from "./restPage.styled";
 import RestaurantCard from "../../../Componets/restaurant/restaurantCard";
 import { axiosWithToken } from "../../../Axios/axios";
 import { v4 as uuid } from "uuid";
+import { useOutletContext } from "react-router-dom";
 
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 function RestPage() {
+
+  const [searchText, setSearchText] = useOutletContext();
+  console.log(searchText)
+
   const [restaurantData, setRestaurantData] = useState([]);
 
   const getAllRestaurants = async () => {
@@ -33,7 +38,10 @@ function RestPage() {
 
   return (
     <RestaurantGrid>
-      {restaurantData.map((restaurant) => {
+      {restaurantData.filter((restaurant) => {
+        return restaurant.name.includes(searchText)
+      } ).map((restaurant) => {
+        console.log(restaurant.name.includes(searchText))
         return <RestaurantCard key={uuid()} restaurant={restaurant} />;
       })}
      

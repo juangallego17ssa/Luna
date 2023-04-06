@@ -14,19 +14,32 @@ export const NavigationDiv = styled.div`
   background-color: #F2F2F2;
   width: 40%;
   border-bottom: solid 1px #D8D8D8;
-`;
-export const SubNavigationDiv = styled.div`
-  border-bottom: 2px solid transparent;
-        > h3 {
-          margin: 1rem;
-          font-size: 1.25rem;
-          border-bottom: 2px solid transparent;
-          }
-            :hover {
+
+  div{
+    height: 4rem;
+    border-bottom: transparent solid 2px;
+
+    :hover {
               border-bottom: darkorange solid 2px;
               cursor: pointer;
-        }
+            }
+    .NavLink{
+      height: 100%;
+      display:flex;
+      align-items: center;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      color:rgba(76, 76, 76, 1);
+      font-size: 1.25rem;
+      border-bottom: 2px solid transparent;
+    }
+    .NavLink.active{
+      border-bottom: darkorange solid 2px;
+    }
+  }
+
 `;
+
 
 export const SearchPageContentDiv= styled.div`
   display: flex;
@@ -43,3 +56,5 @@ export const SearchBarInput= styled.input`
   row-gap: 1.25rem;
   justify-content: center;
 `;
+
+

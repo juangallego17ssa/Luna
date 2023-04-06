@@ -1,11 +1,10 @@
 // BASE IMPORTS
 import { React } from "react";
-import {useEffect, useState} from 'react';
+import { useState} from 'react';
 
 // STYLED IMPORTS
 import {
     EntirePageDiv,
-    SubNavigationDiv,
     NavigationDiv,
     SearchPageContentDiv,
     SearchBarInput
@@ -14,6 +13,7 @@ import {
 // COMPONENTS IMPORTS
 import Navbar from '../../Componets/Layout/Header/navbar';
 import Footer from '../../Componets/Layout/Footer/footer';
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 // import { axiosWithToken } from "../../Axios/axios";
 
@@ -27,20 +27,10 @@ import Footer from '../../Componets/Layout/Footer/footer';
 // eslint-disable-next-line react-hooks/rules-of-hooks
 function SearchPage() {
 
-        // const [searchField, setSearchField] = useState("");
-    const [currentComponent, setCurrentComponent] = useState("REST");
-    const [currentContent, setCurrentContent]=useState(undefined);
-    const goToRestaurants = (e) => {
-        setCurrentComponent("REST")
-    }
-    const goToReviews = (e) => {
-        setCurrentComponent("REVI")
-    }
-    const goToUsers = (e) => {
-        setCurrentComponent("USER")
-    }
-    const goToCreateReview = (e) => {
-        setCurrentComponent("CREA")
+    const [searchText, setSearchText] = useState("")
+
+    const handleSearch = (event) => {
+        setSearchText(event.target.value)
     }
 
     // const fetchContent = async () =>{
@@ -86,31 +76,25 @@ function SearchPage() {
 
     // },[currentComponent])
 
+
+
   return (
         <EntirePageDiv>
             <Navbar/>
             {/* <SearchBarInput onChange={(e) => setSearchField(e.target.value)}/> */}
-            <SearchBarInput/>
+            <SearchBarInput onChange={handleSearch}/>
             <NavigationDiv>
-                <SubNavigationDiv>
-                    {/* <h3 onClick={goToRestaurants}>Restaurants</h3> */}
-                    <h3>RESTAURANTS</h3>
-                </SubNavigationDiv>
-                <SubNavigationDiv>
-                    {/* <h3 onClick={goToReviews}>Reviews</h3> */}
-                    <h3>REVIEWS</h3>
-                </SubNavigationDiv>
-                <SubNavigationDiv>
-                    {/* <h3 onClick={goToUsers}>Users</h3> */}
-                    <h3>USERS</h3>
-                </SubNavigationDiv>
-                <SubNavigationDiv>
-                    {/* <h3 onClick={goToCreateReview}>Create Review</h3> */}
-                    {/* <h3>goToCreatereview</h3> */}
-                </SubNavigationDiv>
+                <div>
+                    <NavLink className={"NavLink"} to={"/search/restaurant"}>RESTAURANTS</NavLink>
+                </div>
+                <div>
+                    <NavLink className={"NavLink"} to={"/search/review"}>REVIEW</NavLink>
+                </div>
+                <div>
+                    <NavLink className={"NavLink"} to={"/search/user"}>USER</NavLink>
+                </div>
             </NavigationDiv>
-            <SearchPageContentDiv>
-            </SearchPageContentDiv>
+            <Outlet context={[searchText, setSearchText]}></Outlet>
             <Footer/>
         </EntirePageDiv>
   );

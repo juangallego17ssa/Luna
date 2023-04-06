@@ -1,7 +1,7 @@
 import axios from "axios";
 
-//let baseURL = "https://lunateam3.propulsion-learn.ch/backend/api/";
-let baseURL = "http://localhost:8001/backend/api/";
+let baseURL = "https://lunateam3.propulsion-learn.ch/backend/api/";
+// let baseURL = "http://localhost:8001/backend/api/";
 // ability to set a baseURL on base of which environement is running of the frontend
 // if (process.env.NODE_ENV === "development") {
 //   baseURL = "http://localhost:8001/backend/api/";
