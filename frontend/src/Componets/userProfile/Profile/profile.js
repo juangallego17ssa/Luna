@@ -30,9 +30,12 @@ export default function Profile() {
     document.body.style.overflow = "hidden";
     return () => (document.body.style.overflow = "scroll");
   });
+  const [imageUrl, setImageUrl] = useState(null);
+  const [profile, setProfile] = useState({});
+  const [files, setFiles] = useState([]);
+  const formData = new FormData();
   let user = useSelector((state) => state.userprofile.user_profile);
   const hiddenFileInput = React.useRef(null);
-  const [avatar, setAvatar] = useState("");
   const [firstName, setFirstName] = useState("Laurent");
 
   const [showReviews, setShowReviews] = useState(false);
@@ -41,6 +44,16 @@ export default function Profile() {
   const [showEdit, setShowEdit] = useState(false);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    axiosWithToken
+      .get("/me/")
+      .then((response) => setImageUrl(response.data.profile_picture))
+      .catch((error) => console.log(error));
+
+    console.log("FOTO");
+    console.log(imageUrl);
+  }, []);
 
   function handleOn(event) {
     console.log(user);
@@ -56,17 +69,8 @@ export default function Profile() {
     setProfileUser(newUserProfile);
   }
 
-  const handleBackgroundChange = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      setAvatar(e.target.result);
-    };
-    reader.readAsDataURL(file);
-  };
-
   const Img = styled.img.attrs({
-    src: `${UserImage ? UserImage : ""}`,
+    src: `${imageUrl ? imageUrl : ""}`,
   })`
     width: 100%;
     height: 100%;
@@ -80,13 +84,15 @@ export default function Profile() {
     src: `${EditIcon ? EditIcon : ""}`,
   })`
     position: relative;
-    top: 1rem;
-    width: 50%;
-    height: 50%;
+    top: -7rem;
+    width: 60%;
+    height: 60%;
+    left: 4vw;
     object-fit: contain;
     background-repeat: no-repeat;
     max-width: 50%;
-    z-index: 0;
+    z-index: 4000;
+    opacity: 0.5;
   `;
 
   const handleNavComment = () => {
@@ -116,12 +122,61 @@ export default function Profile() {
     setShowRestaurants(false);
     setShowEdit(true);
   };
-  //<IconEdit src={EditIcon} alt="Edit logo" onClick={handleClick} />
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const formData = new FormData();
+
+    formData.append("profile_picture", file);
+
+    const myConfig = {
+      method: "patch",
+      data: formData,
+      maxBodyLength: Infinity,
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    };
+
+    const response = await (await axiosWithToken(`/me/`, myConfig)).data;
+    console.log("RESPONSE");
+    console.log(response);
+  }
+
+  const [file, setFile] = useState(null);
+
+  function handleFileInputChange(event) {
+    setFile(event.target.files[0]);
+  }
+
   return (
     <>
       <ProfileWrapper>
-        <Img src={avatar} alt="Image profile"></Img>
-
+        <Img src={imageUrl} alt="Image profile"></Img>
+        {showEdit ? (
+          <form onSubmit={handleSubmit}>
+            <input type="file" onChange={handleFileInputChange} />
+            <button type="submit">Submit</button>
+          </form>
+        ) : (
+          <></>
+        )}
+        {/* {showEdit ? (
+          <IconEdit
+            src={EditIcon}
+            alt="Edit logo"
+            onClick={(e) => sendPost(e)}
+          />
+        ) : (
+          <></>
+        )}{" "}
+        <input
+          type="file"
+          ref={hiddenFileInput}
+          onChange={onFileChange}
+          style={{ display: "none" }}
+        /> */}
         <ProfileButtonWrapper>
           <h1>{firstName}'s profile</h1>
           <div>
